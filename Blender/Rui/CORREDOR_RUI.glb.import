@@ -3,18 +3,7 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-<<<<<<< HEAD
-<<<<<<< HEAD
-uid="uid://dqetg61g4bati"
-=======
-uid="uid://b3dypsfluejj6"
->>>>>>> 3df25fad835fe072e97f2da9f04c73ca52ade05b
-=======
-uid="uid://b3dypsfluejj6"
-=======
-uid="uid://dqetg61g4bati"
->>>>>>> aba6fed697a9d609cab42f979c6bdb249ebc45de
->>>>>>> c15310636133d4b94698ddec85b54953eaa21c86
+uid="uid://dr1j4t8gwb2jj"
 path="res://.godot/imported/CORREDOR_RUI.glb-667c28577e7fecd697d86ea0b8a663bb.scn"
 
 [deps]
@@ -43,5 +32,5 @@ animation/remove_immutable_tracks=true
 animation/import_rest_as_RESET=false
 import_script/path=""
 _subresources={}
-gltf/naming_version=1
+gltf/naming_version=0
 gltf/embedded_image_handling=1
