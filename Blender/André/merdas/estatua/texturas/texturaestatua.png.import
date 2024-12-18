@@ -3,28 +3,50 @@
 importer="texture"
 type="CompressedTexture2D"
 <<<<<<< HEAD
+<<<<<<< HEAD
 uid="uid://krs11msummfh"
 path="res://.godot/imported/texturaestatua.png-d1791c5bb848bccfbe83b9c1ea17cd13.ctex"
 metadata={
 "vram_texture": false
 =======
+=======
+>>>>>>> c15310636133d4b94698ddec85b54953eaa21c86
 uid="uid://cssbaa4ivfdn4"
 path.s3tc="res://.godot/imported/texturaestatua.png-d1791c5bb848bccfbe83b9c1ea17cd13.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
+<<<<<<< HEAD
 >>>>>>> 3df25fad835fe072e97f2da9f04c73ca52ade05b
+=======
+=======
+uid="uid://krs11msummfh"
+path="res://.godot/imported/texturaestatua.png-d1791c5bb848bccfbe83b9c1ea17cd13.ctex"
+metadata={
+"vram_texture": false
+>>>>>>> aba6fed697a9d609cab42f979c6bdb249ebc45de
+>>>>>>> c15310636133d4b94698ddec85b54953eaa21c86
 }
 
 [deps]
 
 source_file="res://Blender/André/merdas/estatua/texturas/texturaestatua.png"
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+dest_files=["res://.godot/imported/texturaestatua.png-d1791c5bb848bccfbe83b9c1ea17cd13.s3tc.ctex"]
+
+[params]
+
+compress/mode=2
+=======
+>>>>>>> c15310636133d4b94698ddec85b54953eaa21c86
 dest_files=["res://.godot/imported/texturaestatua.png-d1791c5bb848bccfbe83b9c1ea17cd13.ctex"]
 
 [params]
 
 compress/mode=0
+<<<<<<< HEAD
 =======
 dest_files=["res://.godot/imported/texturaestatua.png-d1791c5bb848bccfbe83b9c1ea17cd13.s3tc.ctex"]
 
@@ -32,16 +54,26 @@ dest_files=["res://.godot/imported/texturaestatua.png-d1791c5bb848bccfbe83b9c1ea
 
 compress/mode=2
 >>>>>>> 3df25fad835fe072e97f2da9f04c73ca52ade05b
+=======
+>>>>>>> aba6fed697a9d609cab42f979c6bdb249ebc45de
+>>>>>>> c15310636133d4b94698ddec85b54953eaa21c86
 compress/high_quality=false
 compress/lossy_quality=0.7
 compress/hdr_compression=1
 compress/normal_map=0
 compress/channel_pack=0
 <<<<<<< HEAD
+<<<<<<< HEAD
 mipmaps/generate=false
 =======
 mipmaps/generate=true
 >>>>>>> 3df25fad835fe072e97f2da9f04c73ca52ade05b
+=======
+mipmaps/generate=true
+=======
+mipmaps/generate=false
+>>>>>>> aba6fed697a9d609cab42f979c6bdb249ebc45de
+>>>>>>> c15310636133d4b94698ddec85b54953eaa21c86
 mipmaps/limit=-1
 roughness/mode=0
 roughness/src_normal=""
@@ -52,7 +84,14 @@ process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
 process/size_limit=0
 <<<<<<< HEAD
+<<<<<<< HEAD
 detect_3d/compress_to=1
 =======
 detect_3d/compress_to=0
 >>>>>>> 3df25fad835fe072e97f2da9f04c73ca52ade05b
+=======
+detect_3d/compress_to=0
+=======
+detect_3d/compress_to=1
+>>>>>>> aba6fed697a9d609cab42f979c6bdb249ebc45de
+>>>>>>> c15310636133d4b94698ddec85b54953eaa21c86
