@@ -2,7 +2,11 @@
 
 importer="texture"
 type="CompressedTexture2D"
+<<<<<<< HEAD
 uid="uid://bpg2d2muxiuud"
+=======
+uid="uid://ep1kbjwihac4"
+>>>>>>> aba6fed697a9d609cab42f979c6bdb249ebc45de
 path="res://.godot/imported/madeira.png-88d4f31f0c20722a59e949aa4a951585.ctex"
 metadata={
 "vram_texture": false

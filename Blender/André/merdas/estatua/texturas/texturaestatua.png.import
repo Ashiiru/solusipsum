@@ -2,27 +2,46 @@
 
 importer="texture"
 type="CompressedTexture2D"
+<<<<<<< HEAD
 uid="uid://cssbaa4ivfdn4"
 path.s3tc="res://.godot/imported/texturaestatua.png-d1791c5bb848bccfbe83b9c1ea17cd13.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
+=======
+uid="uid://krs11msummfh"
+path="res://.godot/imported/texturaestatua.png-d1791c5bb848bccfbe83b9c1ea17cd13.ctex"
+metadata={
+"vram_texture": false
+>>>>>>> aba6fed697a9d609cab42f979c6bdb249ebc45de
 }
 
 [deps]
 
 source_file="res://Blender/André/merdas/estatua/texturas/texturaestatua.png"
+<<<<<<< HEAD
 dest_files=["res://.godot/imported/texturaestatua.png-d1791c5bb848bccfbe83b9c1ea17cd13.s3tc.ctex"]
 
 [params]
 
 compress/mode=2
+=======
+dest_files=["res://.godot/imported/texturaestatua.png-d1791c5bb848bccfbe83b9c1ea17cd13.ctex"]
+
+[params]
+
+compress/mode=0
+>>>>>>> aba6fed697a9d609cab42f979c6bdb249ebc45de
 compress/high_quality=false
 compress/lossy_quality=0.7
 compress/hdr_compression=1
 compress/normal_map=0
 compress/channel_pack=0
+<<<<<<< HEAD
 mipmaps/generate=true
+=======
+mipmaps/generate=false
+>>>>>>> aba6fed697a9d609cab42f979c6bdb249ebc45de
 mipmaps/limit=-1
 roughness/mode=0
 roughness/src_normal=""
@@ -32,4 +51,8 @@ process/normal_map_invert_y=false
 process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
 process/size_limit=0
+<<<<<<< HEAD
 detect_3d/compress_to=0
+=======
+detect_3d/compress_to=1
+>>>>>>> aba6fed697a9d609cab42f979c6bdb249ebc45de
