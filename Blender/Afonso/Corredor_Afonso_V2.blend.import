@@ -3,11 +3,7 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-<<<<<<< HEAD
-uid="uid://s0ak2m61bffj"
-=======
-uid="uid://bicu6yt0npjct"
->>>>>>> 120f8b24e3b4ab3ec78ae7d9eac8ce97e4a6395b
+uid="uid://cdxvm55t2m3kj"
 path="res://.godot/imported/Corredor_Afonso_V2.blend-9be710093c0bb1b796adbe06b031f020.scn"
 
 [deps]

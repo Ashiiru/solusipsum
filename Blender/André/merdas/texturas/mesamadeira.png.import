@@ -2,46 +2,26 @@
 
 importer="texture"
 type="CompressedTexture2D"
-<<<<<<< HEAD
-uid="uid://bmr8t4vodf856"
+uid="uid://du6wwa22kohwd"
 path="res://.godot/imported/mesamadeira.png-706f36d53f2c0ea78c51604a2d996ea5.ctex"
 metadata={
 "vram_texture": false
-=======
-uid="uid://wcg34uy5v7rh"
-path.s3tc="res://.godot/imported/mesamadeira.png-706f36d53f2c0ea78c51604a2d996ea5.s3tc.ctex"
-metadata={
-"imported_formats": ["s3tc_bptc"],
-"vram_texture": true
->>>>>>> 120f8b24e3b4ab3ec78ae7d9eac8ce97e4a6395b
 }
 
 [deps]
 
 source_file="res://Blender/André/merdas/texturas/mesamadeira.png"
-<<<<<<< HEAD
 dest_files=["res://.godot/imported/mesamadeira.png-706f36d53f2c0ea78c51604a2d996ea5.ctex"]
 
 [params]
 
 compress/mode=0
-=======
-dest_files=["res://.godot/imported/mesamadeira.png-706f36d53f2c0ea78c51604a2d996ea5.s3tc.ctex"]
-
-[params]
-
-compress/mode=2
->>>>>>> 120f8b24e3b4ab3ec78ae7d9eac8ce97e4a6395b
 compress/high_quality=false
 compress/lossy_quality=0.7
 compress/hdr_compression=1
 compress/normal_map=0
 compress/channel_pack=0
-<<<<<<< HEAD
 mipmaps/generate=false
-=======
-mipmaps/generate=true
->>>>>>> 120f8b24e3b4ab3ec78ae7d9eac8ce97e4a6395b
 mipmaps/limit=-1
 roughness/mode=0
 roughness/src_normal=""
@@ -51,8 +31,4 @@ process/normal_map_invert_y=false
 process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
 process/size_limit=0
-<<<<<<< HEAD
 detect_3d/compress_to=1
-=======
-detect_3d/compress_to=0
->>>>>>> 120f8b24e3b4ab3ec78ae7d9eac8ce97e4a6395b
