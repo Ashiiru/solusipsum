@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Solus Ipsum"
-run/main_scene="res://Corredor_1.tscn"
+run/main_scene="res://Scenes/Lvl_1.tscn"
 config/features=PackedStringArray("4.3", "Forward Plus")
 config/icon="res://icon.svg"
 
