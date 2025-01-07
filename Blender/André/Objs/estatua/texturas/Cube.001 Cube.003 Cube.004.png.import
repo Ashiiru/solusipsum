@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dtxig46olcw3n"
-path="res://.godot/imported/Cube.001 Cube.003 Cube.004.png-271a8488adb78ca835d39e3c94924826.ctex"
+path="res://.godot/imported/Cube.001 Cube.003 Cube.004.png-27702c7b2d2473031dbfb2cc9cd370d2.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Blender/André/merdas/estatua/texturas/Cube.001 Cube.003 Cube.004.png"
-dest_files=["res://.godot/imported/Cube.001 Cube.003 Cube.004.png-271a8488adb78ca835d39e3c94924826.ctex"]
+source_file="res://Blender/André/Objs/estatua/texturas/Cube.001 Cube.003 Cube.004.png"
+dest_files=["res://.godot/imported/Cube.001 Cube.003 Cube.004.png-27702c7b2d2473031dbfb2cc9cd370d2.ctex"]
 
 [params]
 

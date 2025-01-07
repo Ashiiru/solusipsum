@@ -4,12 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://bw564rjktec3r"
-path="res://.godot/imported/estatuacripi.blend-5240adf9bc09a829a66c27dc207f0660.scn"
+path="res://.godot/imported/estatuacripi.blend-9439a6e1fa586ee0264b4b7877eb71b7.scn"
 
 [deps]
 
-source_file="res://Blender/André/merdas/estatua/modelo/estatuacripi.blend"
-dest_files=["res://.godot/imported/estatuacripi.blend-5240adf9bc09a829a66c27dc207f0660.scn"]
+source_file="res://Blender/André/Objs/estatua/modelo/estatuacripi.blend"
+dest_files=["res://.godot/imported/estatuacripi.blend-9439a6e1fa586ee0264b4b7877eb71b7.scn"]
 
 [params]
 

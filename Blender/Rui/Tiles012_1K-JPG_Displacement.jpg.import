@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bh182rnb84nxk"
-path="res://.godot/imported/cHJpdmF0ZS9sci9pbWFnZXMvd2Vic2l0ZS8yMDIyLTA1L3BmLXMxMjUtYWtlNzAwNS1hLmpwZw.jpg-06cd441f073bcf24094c147a212090f5.ctex"
+uid="uid://d0eoju8wc8apb"
+path="res://.godot/imported/Tiles012_1K-JPG_Displacement.jpg-c86514e21ecbfa09b492337f8ceef88e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Blender/André/Objs/texturas/cHJpdmF0ZS9sci9pbWFnZXMvd2Vic2l0ZS8yMDIyLTA1L3BmLXMxMjUtYWtlNzAwNS1hLmpwZw.jpg"
-dest_files=["res://.godot/imported/cHJpdmF0ZS9sci9pbWFnZXMvd2Vic2l0ZS8yMDIyLTA1L3BmLXMxMjUtYWtlNzAwNS1hLmpwZw.jpg-06cd441f073bcf24094c147a212090f5.ctex"]
+source_file="res://Blender/Rui/Tiles012_1K-JPG_Displacement.jpg"
+dest_files=["res://.godot/imported/Tiles012_1K-JPG_Displacement.jpg-c86514e21ecbfa09b492337f8ceef88e.ctex"]
 
 [params]
 

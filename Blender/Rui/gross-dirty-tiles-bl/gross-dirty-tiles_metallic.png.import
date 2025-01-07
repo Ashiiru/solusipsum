@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bh182rnb84nxk"
-path="res://.godot/imported/cHJpdmF0ZS9sci9pbWFnZXMvd2Vic2l0ZS8yMDIyLTA1L3BmLXMxMjUtYWtlNzAwNS1hLmpwZw.jpg-06cd441f073bcf24094c147a212090f5.ctex"
+uid="uid://k858xukua0ik"
+path="res://.godot/imported/gross-dirty-tiles_metallic.png-f1c0572ad858d2f315f7d6490463d767.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Blender/André/Objs/texturas/cHJpdmF0ZS9sci9pbWFnZXMvd2Vic2l0ZS8yMDIyLTA1L3BmLXMxMjUtYWtlNzAwNS1hLmpwZw.jpg"
-dest_files=["res://.godot/imported/cHJpdmF0ZS9sci9pbWFnZXMvd2Vic2l0ZS8yMDIyLTA1L3BmLXMxMjUtYWtlNzAwNS1hLmpwZw.jpg-06cd441f073bcf24094c147a212090f5.ctex"]
+source_file="res://Blender/Rui/gross-dirty-tiles-bl/gross-dirty-tiles_metallic.png"
+dest_files=["res://.godot/imported/gross-dirty-tiles_metallic.png-f1c0572ad858d2f315f7d6490463d767.ctex"]
 
 [params]
 

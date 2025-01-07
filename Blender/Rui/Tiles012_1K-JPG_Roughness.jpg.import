@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://6faa7vgdfao8"
-path.s3tc="res://.godot/imported/texturaestatua.png-73648cf2ac8f5306e649a0822e19a295.s3tc.ctex"
+uid="uid://dir4e48t5mqet"
+path.s3tc="res://.godot/imported/Tiles012_1K-JPG_Roughness.jpg-48ef27257ddbc23b67540d851fca5322.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://Blender/André/Objs/estatua/texturas/texturaestatua.png"
-dest_files=["res://.godot/imported/texturaestatua.png-73648cf2ac8f5306e649a0822e19a295.s3tc.ctex"]
+source_file="res://Blender/Rui/Tiles012_1K-JPG_Roughness.jpg"
+dest_files=["res://.godot/imported/Tiles012_1K-JPG_Roughness.jpg-48ef27257ddbc23b67540d851fca5322.s3tc.ctex"]
 
 [params]
 

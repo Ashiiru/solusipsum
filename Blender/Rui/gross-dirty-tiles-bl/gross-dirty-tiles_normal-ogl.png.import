@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://6faa7vgdfao8"
-path.s3tc="res://.godot/imported/texturaestatua.png-73648cf2ac8f5306e649a0822e19a295.s3tc.ctex"
+uid="uid://bt3km6uqc61d1"
+path.s3tc="res://.godot/imported/gross-dirty-tiles_normal-ogl.png-0aca7834ef7942967eacc02192fb2886.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://Blender/André/Objs/estatua/texturas/texturaestatua.png"
-dest_files=["res://.godot/imported/texturaestatua.png-73648cf2ac8f5306e649a0822e19a295.s3tc.ctex"]
+source_file="res://Blender/Rui/gross-dirty-tiles-bl/gross-dirty-tiles_normal-ogl.png"
+dest_files=["res://.godot/imported/gross-dirty-tiles_normal-ogl.png-0aca7834ef7942967eacc02192fb2886.s3tc.ctex"]
 
 [params]
 
@@ -20,12 +20,12 @@ compress/mode=2
 compress/high_quality=false
 compress/lossy_quality=0.7
 compress/hdr_compression=1
-compress/normal_map=0
+compress/normal_map=1
 compress/channel_pack=0
 mipmaps/generate=true
 mipmaps/limit=-1
-roughness/mode=0
-roughness/src_normal=""
+roughness/mode=1
+roughness/src_normal="res://Blender/Rui/gross-dirty-tiles-bl/gross-dirty-tiles_normal-ogl.png"
 process/fix_alpha_border=true
 process/premult_alpha=false
 process/normal_map_invert_y=false

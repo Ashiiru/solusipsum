@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://dkbbvu0dkayl5"
-path="res://.godot/imported/boneco.blend-001522268b5bd66ba93f9d84d4c64eed.scn"
+uid="uid://bu5ok7wg30s35"
+path="res://.godot/imported/large_floor_tiles_02_4k.blend-64e67d52f0056643ba5ae5cbb5ae2b14.scn"
 
 [deps]
 
-source_file="res://Blender/André/Objs/modelos/boneco.blend"
-dest_files=["res://.godot/imported/boneco.blend-001522268b5bd66ba93f9d84d4c64eed.scn"]
+source_file="res://Blender/Rui/large_floor_tiles_02_4k.blend"
+dest_files=["res://.godot/imported/large_floor_tiles_02_4k.blend-64e67d52f0056643ba5ae5cbb5ae2b14.scn"]
 
 [params]
 

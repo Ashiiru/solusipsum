@@ -1,7 +1,0 @@
-[gd_scene load_steps=2 format=3 uid="uid://bb21s23sy6bm5"]
-
-[ext_resource type="PackedScene" uid="uid://ejbkeqx1htqg" path="res://Blender/Afonso/Corredor_Afonso_v3.blend" id="1_ec1hl"]
-
-[node name="Node3D" type="Node3D"]
-
-[node name="Corredor_Afonso_v3" type="Node3D" parent="." instance=ExtResource("1_ec1hl")]

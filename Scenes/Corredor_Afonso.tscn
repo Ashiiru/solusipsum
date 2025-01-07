@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://d23yil13sbds0"]
+
+[ext_resource type="PackedScene" uid="uid://ejbkeqx1htqg" path="res://Blender/Afonso/Corredor_Afonso_v3.blend" id="1_iwf35"]
+
+[node name="Corredor_Afonso_v3" instance=ExtResource("1_iwf35")]
+
+[node name="placaPorta1" parent="." index="3"]
+transform = Transform3D(-1.8066, 0, -1.99178e-08, 0, 0.815794, 0, 2.72789e-07, 0, -0.13191, 1.59614, 14.5812, 15.1233)
