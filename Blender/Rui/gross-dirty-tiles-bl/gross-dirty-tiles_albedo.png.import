@@ -2,11 +2,7 @@
 
 importer="texture"
 type="CompressedTexture2D"
-<<<<<<< HEAD
-uid="uid://daf5l3kqvsyiv"
-=======
-uid="uid://dh77btqgvnj7b"
->>>>>>> 7d76fe209b403e808d8354aff9179da9b771e35e
+uid="uid://c2toy4pahcsig"
 path.s3tc="res://.godot/imported/gross-dirty-tiles_albedo.png-e07e19bf3e81e05fa9ba0031a482a46c.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
