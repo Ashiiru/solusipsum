@@ -3,7 +3,11 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
+<<<<<<< HEAD
 uid="uid://bu5ok7wg30s35"
+=======
+uid="uid://y8la8pp7khee"
+>>>>>>> 7d76fe209b403e808d8354aff9179da9b771e35e
 path="res://.godot/imported/large_floor_tiles_02_4k.blend-64e67d52f0056643ba5ae5cbb5ae2b14.scn"
 
 [deps]

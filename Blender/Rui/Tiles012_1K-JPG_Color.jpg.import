@@ -2,7 +2,11 @@
 
 importer="texture"
 type="CompressedTexture2D"
+<<<<<<< HEAD
 uid="uid://ksd350mneq3v"
+=======
+uid="uid://y3h25nlq3dcv"
+>>>>>>> 7d76fe209b403e808d8354aff9179da9b771e35e
 path.s3tc="res://.godot/imported/Tiles012_1K-JPG_Color.jpg-57390f7f74e7c4b27da569424f5a060b.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],

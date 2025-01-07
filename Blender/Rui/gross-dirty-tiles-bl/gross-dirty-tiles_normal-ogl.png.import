@@ -2,7 +2,11 @@
 
 importer="texture"
 type="CompressedTexture2D"
+<<<<<<< HEAD
 uid="uid://bt3km6uqc61d1"
+=======
+uid="uid://gg707qebn7fj"
+>>>>>>> 7d76fe209b403e808d8354aff9179da9b771e35e
 path.s3tc="res://.godot/imported/gross-dirty-tiles_normal-ogl.png-0aca7834ef7942967eacc02192fb2886.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],

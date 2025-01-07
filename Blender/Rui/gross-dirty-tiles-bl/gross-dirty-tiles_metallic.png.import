@@ -2,7 +2,11 @@
 
 importer="texture"
 type="CompressedTexture2D"
+<<<<<<< HEAD
 uid="uid://k858xukua0ik"
+=======
+uid="uid://c8xgu4fm8uqw1"
+>>>>>>> 7d76fe209b403e808d8354aff9179da9b771e35e
 path="res://.godot/imported/gross-dirty-tiles_metallic.png-f1c0572ad858d2f315f7d6490463d767.ctex"
 metadata={
 "vram_texture": false
