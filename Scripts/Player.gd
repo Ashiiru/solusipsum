@@ -41,7 +41,3 @@ func _physics_process(delta: float) -> void:
 		velocity.z = 0.0
 
 	move_and_slide()
-
-
-func _on_trigger_anim_door_body_entered(body: Node3D) -> void:
-	pass # Replace with function body.
