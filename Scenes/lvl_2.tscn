@@ -7,6 +7,21 @@
 [sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_3q0hh"]
 points = PackedVector3Array(-1, -1, -1, 1, 1, 1, 1, -1, 1, 1, 1, -1, -1, 1, 1, 1, -1, -1, -1, -1, 1, -1, 1, -1)
 
+[sub_resource type="Animation" id="Animation_ntrsa"]
+length = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, -0.942262, 0)]
+}
+
 [sub_resource type="Animation" id="Animation_1i3ve"]
 resource_name = "open door"
 length = 2.0
@@ -21,21 +36,6 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(2.2974, 2.2974),
 "update": 0,
 "values": [Vector3(0, 1.56293, 0), Vector3(0, -0.942262, 0)]
-}
-
-[sub_resource type="Animation" id="Animation_ntrsa"]
-length = 2.0
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:rotation")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector3(0, -0.942262, 0)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_5qhj1"]
@@ -103,7 +103,7 @@ shape = SubResource("ConvexPolygonShape3D_3q0hh")
 transform = Transform3D(0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, -0.316602, 0, -0.0151429)
 
 [node name="porta1" parent="CORREDOR_RUI" index="0"]
-transform = Transform3D(0.240607, 0, -2.83595, 0, 6.10756, 0, 0.331018, 0, 2.06137, -28.1642, -3.80127, -50.1645)
+transform = Transform3D(0.240608, 0, -2.83595, 0, 6.10756, 0, 0.331018, 0, 2.06137, -28.1642, -3.80127, -50.1645)
 
 [node name="open door1" type="AnimationPlayer" parent="CORREDOR_RUI/porta1" index="0"]
 libraries = {
@@ -177,7 +177,7 @@ shape = SubResource("ConvexPolygonShape3D_c1cv3")
 shape = SubResource("ConcavePolygonShape3D_xmo1s")
 
 [node name="porta2" parent="CORREDOR_RUI" index="25"]
-transform = Transform3D(0.240607, 0, -2.83595, 0, 6.10756, 0, 0.331018, 0, 2.06137, 20.7737, -3.80127, -50.1645)
+transform = Transform3D(0.240608, 0, -2.83595, 0, 6.10756, 0, 0.331018, 0, 2.06137, 20.7737, -3.80127, -50.1645)
 
 [node name="open door2" type="AnimationPlayer" parent="CORREDOR_RUI/porta2" index="0"]
 libraries = {
