@@ -1,8 +1,9 @@
-[gd_scene load_steps=24 format=3 uid="uid://cgahhes3omp5v"]
+[gd_scene load_steps=26 format=3 uid="uid://cgahhes3omp5v"]
 
 [ext_resource type="PackedScene" uid="uid://bcpxnpgi6m2j5" path="res://Blender/Rui/CORREDOR_RUI.blend" id="1_d2nc4"]
 [ext_resource type="PackedScene" uid="uid://cct3ijl60412x" path="res://Scenes/Player.tscn" id="2_e0ocd"]
 [ext_resource type="Script" path="res://Scripts/bixo.gd" id="2_u7aau"]
+[ext_resource type="Script" path="res://Scripts/abrir_porta_2.gd" id="3_b27oj"]
 
 [sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_3q0hh"]
 points = PackedVector3Array(-1, -1, -1, 1, 1, 1, 1, -1, 1, 1, 1, -1, -1, 1, 1, 1, -1, -1, -1, -1, 1, -1, 1, -1)
@@ -92,6 +93,9 @@ points = PackedVector3Array(-0.34582, -0.980964, -1.15349, 1, 0.9965, 0.991558, 
 [sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_sy4r3"]
 points = PackedVector3Array(-0.34582, -0.980964, -1.15349, 1, 0.9965, 0.991558, -0.997068, 1, 0.995354, -0.9965, -1, 0.994738, -0.991804, 0.994736, -1, 0.998005, -0.995073, -1, 0.998005, 0.994505, -1, 1, -0.997068, 0.991558, -0.991804, -0.995304, -1, 0.366229, -0.916708, -1.1967, -0.359997, -0.916708, -1.1967, 0.35091, -0.977733, -1.14998)
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_pvije"]
+size = Vector3(9.90076, 12.5231, 5.40576)
+
 [node name="Lvl_2" type="Node3D"]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
@@ -179,13 +183,7 @@ shape = SubResource("ConcavePolygonShape3D_xmo1s")
 [node name="porta2" parent="CORREDOR_RUI" index="25"]
 transform = Transform3D(0.240608, 0, -2.83595, 0, 6.10756, 0, 0.331018, 0, 2.06137, 20.7737, -3.80127, -50.1645)
 
-[node name="open door2" type="AnimationPlayer" parent="CORREDOR_RUI/porta2" index="0"]
-libraries = {
-"": SubResource("AnimationLibrary_5qhj1")
-}
-autoplay = "open door"
-
-[node name="StaticBody3D" type="StaticBody3D" parent="CORREDOR_RUI/porta2" index="1"]
+[node name="StaticBody3D" type="StaticBody3D" parent="CORREDOR_RUI/porta2" index="0"]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="CORREDOR_RUI/porta2/StaticBody3D"]
 shape = SubResource("ConvexPolygonShape3D_2pg1v")
@@ -207,12 +205,29 @@ shape = SubResource("ConvexPolygonShape3D_sy4r3")
 script = ExtResource("2_u7aau")
 player_head_path = NodePath("../../CharacterBody3D/Head")
 
-[node name="CharacterBody3D" parent="." instance=ExtResource("2_e0ocd")]
+[node name="Triggers" type="Node3D" parent="CORREDOR_RUI"]
+
+[node name="abrir porta 2" type="Area3D" parent="CORREDOR_RUI/Triggers"]
+script = ExtResource("3_b27oj")
+
+[node name="open door2" type="AnimationPlayer" parent="CORREDOR_RUI/Triggers/abrir porta 2"]
+root_node = NodePath("../../../porta2")
+libraries = {
+"": SubResource("AnimationLibrary_5qhj1")
+}
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CORREDOR_RUI/Triggers/abrir porta 2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24.792, -4.04446, -53.766)
+shape = SubResource("BoxShape3D_pvije")
+
+[node name="CharacterBody3D" parent="." groups=["Player"] instance=ExtResource("2_e0ocd")]
 transform = Transform3D(-0.0141586, 0.00156694, 0.999899, 0.000791461, 0.999998, -0.00155589, -0.9999, 0.000769365, -0.0141599, -16.2055, -1.75315, -15.0999)
 slide_on_ceiling = false
 
 [node name="Head" parent="CharacterBody3D" index="2"]
 transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 0, 0.813632, 0)
+
+[connection signal="body_entered" from="CORREDOR_RUI/Triggers/abrir porta 2" to="CORREDOR_RUI/Triggers/abrir porta 2" method="_on_body_entered"]
 
 [editable path="CORREDOR_RUI"]
 [editable path="CharacterBody3D"]
