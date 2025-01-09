@@ -198,12 +198,6 @@ libraries = {
 "": SubResource("AnimationLibrary_m0xub")
 }
 
-[node name="AnimationPlayer2" type="AnimationPlayer" parent="Triggers/Trigger_Anim_Door"]
-root_node = NodePath("../../../Corredor_Afonso_v3/elevador/ElevadorEsqrd")
-libraries = {
-"": SubResource("AnimationLibrary_m0xub")
-}
-
 [node name="Trigger_Anim_Down" type="Area3D" parent="Triggers"]
 transform = Transform3D(0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, -11.861, 2.11577, 4.98747)
 script = ExtResource("2_8ar0w")
