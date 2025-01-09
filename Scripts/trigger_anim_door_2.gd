@@ -1,6 +1,6 @@
 extends Area3D
 
-@onready var animation_player = $"../Trigger_Anim_Door/AnimationPlayer2"
+@onready var animation_player = $"../Trigger_Anim_Door/AnimationPlayer"
 
 
 

@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=3 uid="uid://c50acatuftkjs"]
+[gd_scene load_steps=23 format=3 uid="uid://c50acatuftkjs"]
 
 [ext_resource type="Script" path="res://Scripts/cameraManager.gd" id="1_eys4d"]
 [ext_resource type="PackedScene" uid="uid://d23yil13sbds0" path="res://Scenes/Corredor_Afonso.tscn" id="1_h1w7w"]
@@ -7,7 +7,6 @@
 [ext_resource type="Script" path="res://Scripts/trigger_anim_door_2.gd" id="2_kljut"]
 [ext_resource type="Script" path="res://Scripts/abrir_fechar_porta.gd" id="2_m1rg1"]
 [ext_resource type="PackedScene" uid="uid://cayx7gq1jdaa2" path="res://Scenes/Spawner.tscn" id="7_o3jd7"]
-[ext_resource type="PackedScene" uid="uid://ckqry7v5vyi8j" path="res://Scenes/LevelLoader.tscn" id="8_vo6sh"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_cfage"]
 sky_top_color = Color(0.48684, 0.443289, 0.360569, 1)
@@ -25,6 +24,9 @@ glow_enabled = true
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_0qyi5"]
 size = Vector3(5.30884, 3.7915, 4.24805)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_rc6hn"]
+size = Vector3(4.71854, 0.804565, 1.14355)
 
 [sub_resource type="Animation" id="Animation_17qbi"]
 length = 0.001
@@ -145,11 +147,8 @@ _data = {
 "elevador_baixo": SubResource("Animation_e6exr")
 }
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_rc6hn"]
-size = Vector3(4.71854, 0.804565, 1.14355)
-
 [sub_resource type="BoxShape3D" id="BoxShape3D_su1km"]
-size = Vector3(12.0901, 3.62372, 8.64497)
+size = Vector3(12.0901, 3.62372, 2.56604)
 
 [sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_05g85"]
 points = PackedVector3Array(3.05877, 0.0184498, 0.869069, -3.72685, -6.18605, -0.487861, 0.926108, -0.560944, -0.875945, -3.45709, 5.75634, 0.444712, 3.0983, 5.61962, -0.440755, -3.72685, 6.22295, -0.487861, 3.0983, -5.58272, -0.440755, -3.45709, -5.71944, 0.444712, 3.4471, 6.22295, 0.481155, 3.4471, -6.18605, 0.481155, 3.05877, 0.0184498, -0.875945, 0.732294, -0.560944, 0.869069, 1.89588, 0.0184498, 0.869069, 1.89588, -0.75529, 0.869069, 0.926108, -0.173467, -0.875945, 1.89588, 0.0184498, -0.875945)
@@ -190,15 +189,15 @@ shape = SubResource("BoxShape3D_0qyi5")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.48502, 1.1825, 1.49692)
 script = ExtResource("2_m1rg1")
 
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Triggers/Trigger_Anim_Door"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.86647, -0.976673, 1.79271)
+shape = SubResource("BoxShape3D_rc6hn")
+
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Triggers/Trigger_Anim_Door"]
 root_node = NodePath("../../../Corredor_Afonso_v3/elevador/ElevadorEsqrd")
 libraries = {
 "": SubResource("AnimationLibrary_m0xub")
 }
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Triggers/Trigger_Anim_Door"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.86647, -0.976673, 1.79271)
-shape = SubResource("BoxShape3D_rc6hn")
 
 [node name="AnimationPlayer2" type="AnimationPlayer" parent="Triggers/Trigger_Anim_Door"]
 root_node = NodePath("../../../Corredor_Afonso_v3/elevador/ElevadorEsqrd")
@@ -211,7 +210,7 @@ transform = Transform3D(0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, -11.861, 2.11577, 4.
 script = ExtResource("2_8ar0w")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Triggers/Trigger_Anim_Down"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.853477, -6.55407, 2.49449)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.853477, -6.55407, 5.53396)
 shape = SubResource("BoxShape3D_su1km")
 
 [node name="Corredor_Afonso_v3" parent="." instance=ExtResource("1_h1w7w")]
@@ -250,21 +249,15 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.685757, -0.0992069, 0.85228
 shape = SubResource("ConcavePolygonShape3D_1w45t")
 
 [node name="Player" parent="." groups=["Player"] instance=ExtResource("2_em33v")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 17.7683, 1.93982, 1.8554)
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -10.7258, -7.47473, 2.1994)
 
 [node name="DeBug Camera3D" type="Camera3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.7402, 0, 21.6522)
 
 [node name="BallSpawner" parent="." instance=ExtResource("7_o3jd7")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.8775, -4.6119, 0.459221)
-spawn_interval = 30.0
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.2629, -5.15886, 1.36151)
+spawn_interval = 4.0
 spawn_position_node = NodePath(".")
-
-[node name="LevelLoader" parent="." instance=ExtResource("8_vo6sh")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.9717, -8.85447, -1.64695)
-
-[node name="Area3D" parent="LevelLoader" index="0"]
-next_level_path = "res://Scenes/lvl_2.tscn"
 
 [connection signal="body_entered" from="Triggers/Trigger_Anim_Door_2" to="Triggers/Trigger_Anim_Door_2" method="_on_body_entered"]
 [connection signal="body_entered" from="Triggers/Trigger_Anim_Door" to="Triggers/Trigger_Anim_Door" method="_on_body_entered"]
@@ -275,4 +268,3 @@ next_level_path = "res://Scenes/lvl_2.tscn"
 
 [editable path="Corredor_Afonso_v3"]
 [editable path="Player"]
-[editable path="LevelLoader"]

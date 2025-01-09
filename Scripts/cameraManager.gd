@@ -32,7 +32,3 @@ func switch_to_player_camera() -> void:
 	player_camera.current = true
 	debug_camera.current = false
 	print("Switched to Player Camera")
-
-
-func _on_trigger_anim_down_body_exited(body: Node3D) -> void:
-	pass # Replace with function body.

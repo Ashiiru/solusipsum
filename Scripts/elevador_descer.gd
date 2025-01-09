@@ -1,6 +1,6 @@
 extends Area3D
 
-@onready var animation_player = $"../Trigger_Anim_Door/AnimationPlayer"
+@onready var animation_player = $"../Trigger_Anim_Door/AnimationPlayer2"
 var has_played: bool = false  # To ensure the sequence runs only once
 
 func _on_body_entered(body: Node3D) -> void:

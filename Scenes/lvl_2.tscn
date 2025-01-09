@@ -36,21 +36,6 @@ points = PackedVector3Array(-0.371, -0.653029, 1.2199, 0.962397, 0.680297, 0.579
 [sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_fiw2n"]
 points = PackedVector3Array(-0.34582, -0.980964, -1.15349, 1, 0.9965, 0.991558, -0.997068, 1, 0.995354, -0.9965, -1, 0.994738, -0.991804, 0.994736, -1, 0.998005, -0.995073, -1, 0.998005, 0.994505, -1, 1, -0.997068, 0.991558, -0.991804, -0.995304, -1, 0.366229, -0.916708, -1.1967, -0.359997, -0.916708, -1.1967, 0.35091, -0.977733, -1.14998)
 
-[sub_resource type="Animation" id="Animation_ypsbw"]
-resource_name = "portao down"
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 1),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector3(55.3005, 28.4045, -29.4391), Vector3(55.3005, 3.08028, -29.4391)]
-}
-
 [sub_resource type="Animation" id="Animation_lt0hh"]
 length = 0.001
 tracks/0/type = "value"
@@ -64,6 +49,21 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 0,
 "values": [Vector3(55.3005, 28.4045, -29.4391)]
+}
+
+[sub_resource type="Animation" id="Animation_ypsbw"]
+resource_name = "portao down"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(55.3005, 28.4045, -29.4391), Vector3(55.3005, 3.08028, -29.4391)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_8d8hn"]
