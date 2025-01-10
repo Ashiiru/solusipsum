@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://dbg2ctex56sjr"
+path="res://.godot/imported/luz corredor.ogg-022696a083438950deea6f6b5825b515.oggvorbisstr"
+
+[deps]
+
+source_file="res://luz corredor.ogg"
+dest_files=["res://.godot/imported/luz corredor.ogg-022696a083438950deea6f6b5825b515.oggvorbisstr"]
+
+[params]
+
+loop=true
+loop_offset=0.0
+bpm=0.0
+beat_count=0
+bar_beats=4

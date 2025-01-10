@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://dkdbjo47ccguf"
+path="res://.godot/imported/exit sign.ogg-0a1b5335caebefe1b0ff98101b6aeadf.oggvorbisstr"
+
+[deps]
+
+source_file="res://exit sign.ogg"
+dest_files=["res://.godot/imported/exit sign.ogg-0a1b5335caebefe1b0ff98101b6aeadf.oggvorbisstr"]
+
+[params]
+
+loop=true
+loop_offset=0.0
+bpm=0.0
+beat_count=0
+bar_beats=4
