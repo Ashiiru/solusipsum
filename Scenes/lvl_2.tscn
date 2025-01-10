@@ -3,7 +3,11 @@
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 [gd_scene load_steps=61 format=4 uid="uid://cgahhes3omp5v"]
+=======
+[gd_scene load_steps=65 format=4 uid="uid://cgahhes3omp5v"]
+>>>>>>> Stashed changes
 =======
 [gd_scene load_steps=65 format=4 uid="uid://cgahhes3omp5v"]
 >>>>>>> Stashed changes
@@ -29,7 +33,11 @@
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 [ext_resource type="ArrayMesh" uid="uid://bhiopqaxhfpur" path="res://MeshEstatua.tres" id="2_y6kq0"]
+=======
+[ext_resource type="AudioStream" uid="uid://vl0ibao2qyvp" path="res://vendingmachine.ogg" id="2_vjoka"]
+>>>>>>> Stashed changes
 =======
 [ext_resource type="AudioStream" uid="uid://vl0ibao2qyvp" path="res://vendingmachine.ogg" id="2_vjoka"]
 >>>>>>> Stashed changes
