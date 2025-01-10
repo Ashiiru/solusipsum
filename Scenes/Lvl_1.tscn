@@ -269,8 +269,9 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.9717, -8.85447, -1.64695)
 [node name="Area3D" parent="LevelLoader" index="0"]
 next_level_path = "res://Scenes/lvl_2.tscn"
 
-[node name="Statue" parent="." instance=ExtResource("9_2mna4")]
+[node name="Statue" parent="." node_paths=PackedStringArray("player") instance=ExtResource("9_2mna4")]
 transform = Transform3D(-0.999742, 0, -0.0227223, 0, 1, 0, 0.0227223, 0, -0.999742, -7.05502, 2.96834, 1.67396)
+player = NodePath("../Player")
 
 [node name="CollisionShape3D" parent="Statue" index="0"]
 shape = SubResource("CapsuleShape3D_q1kw6")
