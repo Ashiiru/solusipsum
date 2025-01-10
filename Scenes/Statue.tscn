@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://du5wyhgwo32g3"]
+
+[ext_resource type="Script" path="res://Scripts/statue.gd" id="1_g6anv"]
+[ext_resource type="ArrayMesh" uid="uid://bhiopqaxhfpur" path="res://MeshEstatua.tres" id="1_j4aig"]
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_wjeyb"]
+points = PackedVector3Array(0.513869, 2.94471, 3.23015, 0.513869, 2.94609, -3.14845, 0.422472, 3.39143, 2.64857, -0.349146, 2.76822, 3.23015, 0.651369, -4.75849, 3.19888, 1.41652, -1.46736, 3.20764, -0.349146, 2.7696, -3.14845, 0.422472, 3.39143, -2.56687, 1.41611, -1.46598, -3.15032, 0.651369, -4.75573, -3.15845, -0.22944, -4.75573, -3.15845, 0.390119, 3.54861, 0.481101, -0.0239985, 4.33313, 0.363534, -0.670249, 4.33313, 0.363534, -0.440543, 3.21495, 2.64857, -2.71495, -9.64072, 0.615551, -0.22944, -4.75849, 3.19888, 0.308023, -9.7524, 0.615551, 0.308023, -9.7524, -0.535097, -0.440543, 3.21495, -2.56687, -2.71495, -9.64072, -0.535097, -0.670249, 4.33313, -0.282455, -0.0239985, 4.33313, -0.282455, 0.390119, 3.54861, -0.400021, 0.113502, -9.7524, -0.535097, 0.113502, -9.7524, 0.615551)
+
+[node name="Statue" type="CharacterBody3D" groups=["Statue"]]
+script = ExtResource("1_g6anv")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("ConvexPolygonShape3D_wjeyb")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = ExtResource("1_j4aig")
+
+[node name="RayCast3D" type="RayCast3D" parent="."]
+target_position = Vector3(-20, 0, 0)
+
+[node name="Timer" type="Timer" parent="."]

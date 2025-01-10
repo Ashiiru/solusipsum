@@ -1,0 +1,38 @@
+[gd_scene load_steps=6 format=3 uid="uid://cfcnl5va8scqv"]
+
+[ext_resource type="PackedScene" uid="uid://du5wyhgwo32g3" path="res://Scenes/Statue.tscn" id="1_6xb52"]
+[ext_resource type="PackedScene" uid="uid://cct3ijl60412x" path="res://Scenes/Player.tscn" id="2_1nmx7"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_dvwmp"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_xmx5v"]
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_41dq5"]
+points = PackedVector3Array(0.5, 0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5)
+
+[node name="Node3D" type="Node3D"]
+
+[node name="Statue" parent="." node_paths=PackedStringArray("player") instance=ExtResource("1_6xb52")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.226665, -11.8727, 6.8845)
+player = NodePath("../Player")
+
+[node name="CollisionShape3D" parent="Statue" index="0"]
+shape = SubResource("CapsuleShape3D_dvwmp")
+
+[node name="MeshInstance3D" parent="Statue" index="1"]
+transform = Transform3D(-8.74228e-09, 0, -0.2, 0, 0.2, 0, 0.2, 0, -8.74228e-09, 0, 0, 0)
+
+[node name="Player" parent="." groups=["Player"] instance=ExtResource("2_1nmx7")]
+transform = Transform3D(-0.00994825, 0, 0.999951, 0, 1, 0, -0.999951, 0, -0.00994825, -13.6464, -12.6039, 7.10542)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(100, 0, 0, 0, 1, 0, 0, 0, 100, 0, -14.515, 0)
+mesh = SubResource("BoxMesh_xmx5v")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="MeshInstance3D"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_41dq5")
+
+[editable path="Statue"]
+[editable path="Player"]

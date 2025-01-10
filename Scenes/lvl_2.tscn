@@ -1,8 +1,9 @@
-[gd_scene load_steps=60 format=4 uid="uid://cgahhes3omp5v"]
+[gd_scene load_steps=61 format=4 uid="uid://cgahhes3omp5v"]
 
 [ext_resource type="PackedScene" uid="uid://bcpxnpgi6m2j5" path="res://Blender/Rui/CORREDOR_RUI.blend" id="1_d2nc4"]
 [ext_resource type="PackedScene" uid="uid://cct3ijl60412x" path="res://Scenes/Player.tscn" id="2_e0ocd"]
 [ext_resource type="Script" path="res://Scripts/bixo.gd" id="2_u7aau"]
+[ext_resource type="ArrayMesh" uid="uid://bhiopqaxhfpur" path="res://MeshEstatua.tres" id="2_y6kq0"]
 [ext_resource type="Texture2D" uid="uid://oprcwjk4w4ee" path="res://Blender/Rui/ecratv.png" id="3_3uqmo"]
 [ext_resource type="Script" path="res://Scripts/abrir_porta.gd" id="3_eipdi"]
 [ext_resource type="Script" path="res://Scripts/portao.gd" id="4_qcmf6"]
@@ -461,6 +462,9 @@ libraries = {
 [node name="CollisionShape3D" type="CollisionShape3D" parent="CORREDOR_RUI/portao/StaticBody3D"]
 shape = SubResource("ConvexPolygonShape3D_0mhlm")
 
+[node name="boneco" parent="CORREDOR_RUI" index="19"]
+mesh = ExtResource("2_y6kq0")
+
 [node name="StaticBody3D" type="StaticBody3D" parent="CORREDOR_RUI/boneco" index="0"]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="CORREDOR_RUI/boneco/StaticBody3D"]
@@ -494,7 +498,7 @@ libraries = {
 transform = Transform3D(0.00510518, 0.648967, 0.00185148, 0.00407676, -0.00659972, 0.187893, 0.257297, -0.012772, -0.00301382, 96.3157, -10.7252, -69.0784)
 
 [node name="ESCOTILA ESQ" parent="CORREDOR_RUI/roda esq" index="0"]
-transform = Transform3D(0.0272435, 1.28662, 37.0666, 28.7115, -3.79184, 0.0145761, 1.80646, 60.2473, -0.790665, -0.55368, 0.257095, -0.381313)
+transform = Transform3D(0.0272435, 1.28662, 37.0666, 28.7115, -3.79184, 0.0145761, 1.80646, 60.2473, -0.790664, -0.55368, 0.257095, -0.381313)
 rotation_edit_mode = 1
 
 [node name="StaticBody3D" type="StaticBody3D" parent="CORREDOR_RUI/roda esq/ESCOTILA ESQ" index="0"]
