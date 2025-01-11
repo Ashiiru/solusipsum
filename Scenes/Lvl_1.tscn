@@ -9,20 +9,22 @@
 [ext_resource type="PackedScene" uid="uid://cayx7gq1jdaa2" path="res://Scenes/Spawner.tscn" id="7_o3jd7"]
 [ext_resource type="PackedScene" uid="uid://ckqry7v5vyi8j" path="res://Scenes/LevelLoader.tscn" id="8_vo6sh"]
 
-[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_rvndx"]
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_v0xoy"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
 ground_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
 
-[sub_resource type="Sky" id="Sky_w465i"]
-sky_material = SubResource("ProceduralSkyMaterial_rvndx")
+[sub_resource type="Sky" id="Sky_hoprv"]
+sky_material = SubResource("ProceduralSkyMaterial_v0xoy")
 
-[sub_resource type="Environment" id="Environment_ic4d4"]
+[sub_resource type="Environment" id="Environment_e868v"]
 background_mode = 2
-sky = SubResource("Sky_w465i")
+sky = SubResource("Sky_hoprv")
 tonemap_mode = 2
 ssao_enabled = true
 sdfgi_enabled = true
+sdfgi_cascades = 6
 glow_enabled = true
+adjustment_enabled = true
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_0qyi5"]
 size = Vector3(5.30884, 3.7915, 4.24805)
@@ -170,7 +172,14 @@ player_camera_path = NodePath("Player/Head/Camera3D")
 debug_camera_path = NodePath("DeBug Camera3D")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
-environment = SubResource("Environment_ic4d4")
+environment = SubResource("Environment_e868v")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.127065, 0.393929, -0.910316, 0, 0.917755, 0.397148, 0.991894, 0.0504634, -0.116614, 0, 0, 0)
+light_color = Color(1, 1, 0.784314, 1)
+light_energy = 5.0
+shadow_enabled = true
+directional_shadow_max_distance = 10.0
 
 [node name="Triggers" type="Node3D" parent="."]
 
@@ -264,21 +273,14 @@ next_level_path = "res://Scenes/lvl_2.tscn"
 
 [node name="SpotLight3D" type="SpotLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -9.75518, 6.42147, 1.41327)
-spot_range = 8.364
+spot_range = 1018.36
 spot_angle = 88.59
 spot_angle_attenuation = 1.27456
 
-[node name="SpotLight3D" type="SpotLight3D" parent="SpotLight3D"]
-transform = Transform3D(0.515308, 0.15388, -0.843077, -0.00982566, 0.984744, 0.173731, 0.856949, -0.0812415, 0.508959, -23.1776, 1.99613, 4.11986)
-light_energy = 13.134
-spot_range = 3756.55
-spot_angle = 10.848
-
-[node name="OmniLight3D" type="OmniLight3D" parent="SpotLight3D/SpotLight3D"]
-transform = Transform3D(-0.531313, 0.158116, -0.832289, 0.0433625, 0.986216, 0.159678, 0.846065, 0.0487487, -0.530846, 11.4464, 1.88414, -32.447)
+[node name="OmniLight3D" type="OmniLight3D" parent="SpotLight3D"]
+transform = Transform3D(-0.980415, 0.192139, 0.0432299, 0.19491, 0.978086, 0.0731943, -0.0282191, 0.0801867, -0.99638, 10.4582, -1.42882, -2.69997)
 light_color = Color(1, 0, 0, 1)
-light_energy = 2.0
-omni_range = 0.552
+omni_range = 0.922
 omni_attenuation = 6.788
 
 [connection signal="body_entered" from="Triggers/Trigger_Anim_Door_2" to="Triggers/Trigger_Anim_Door_2" method="_on_body_entered"]
