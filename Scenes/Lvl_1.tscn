@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=3 uid="uid://c50acatuftkjs"]
+[gd_scene load_steps=22 format=3 uid="uid://c50acatuftkjs"]
 
 [ext_resource type="Script" path="res://Scripts/cameraManager.gd" id="1_eys4d"]
 [ext_resource type="PackedScene" uid="uid://d23yil13sbds0" path="res://Scenes/Corredor_Afonso.tscn" id="1_h1w7w"]
@@ -9,22 +9,17 @@
 [ext_resource type="PackedScene" uid="uid://cayx7gq1jdaa2" path="res://Scenes/Spawner.tscn" id="7_o3jd7"]
 [ext_resource type="PackedScene" uid="uid://ckqry7v5vyi8j" path="res://Scenes/LevelLoader.tscn" id="8_vo6sh"]
 
-[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_v0xoy"]
-sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
-ground_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
-
-[sub_resource type="Sky" id="Sky_hoprv"]
-sky_material = SubResource("ProceduralSkyMaterial_v0xoy")
-
-[sub_resource type="Environment" id="Environment_e868v"]
+[sub_resource type="Environment" id="Environment_hmgo4"]
 background_mode = 2
-sky = SubResource("Sky_hoprv")
-tonemap_mode = 2
+ambient_light_source = 1
+tonemap_mode = 1
 ssao_enabled = true
+ssao_radius = 9.6
+ssao_intensity = 7.25
 sdfgi_enabled = true
-sdfgi_cascades = 6
 glow_enabled = true
-adjustment_enabled = true
+volumetric_fog_enabled = true
+volumetric_fog_density = 0.01
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_0qyi5"]
 size = Vector3(5.30884, 3.7915, 4.24805)
@@ -172,14 +167,7 @@ player_camera_path = NodePath("Player/Head/Camera3D")
 debug_camera_path = NodePath("DeBug Camera3D")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
-environment = SubResource("Environment_e868v")
-
-[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
-transform = Transform3D(-0.127065, 0.393929, -0.910316, 0, 0.917755, 0.397148, 0.991894, 0.0504634, -0.116614, 0, 0, 0)
-light_color = Color(1, 1, 0.784314, 1)
-light_energy = 5.0
-shadow_enabled = true
-directional_shadow_max_distance = 10.0
+environment = SubResource("Environment_hmgo4")
 
 [node name="Triggers" type="Node3D" parent="."]
 
@@ -249,6 +237,9 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.503, -2.17295, -3.92128)
 [node name="CollisionShape3D" parent="Corredor_Afonso_v3/elevador/ElevadorEsqrd/StaticBody3D" index="0"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.685757, -0.0992069, 0.85228)
 
+[node name="OmniLight3D" type="OmniLight3D" parent="Corredor_Afonso_v3/elevador" index="3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.43463, 0)
+
 [node name="StaticBody3D" type="StaticBody3D" parent="Corredor_Afonso_v3/Room" index="0"]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Corredor_Afonso_v3/Room/StaticBody3D"]
@@ -271,17 +262,22 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.9717, -8.85447, -1.64695)
 [node name="Area3D" parent="LevelLoader" index="0"]
 next_level_path = "res://Scenes/lvl_2.tscn"
 
-[node name="SpotLight3D" type="SpotLight3D" parent="."]
+[node name="SpotLight3D2" type="SpotLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -9.75518, 6.42147, 1.41327)
 spot_range = 1018.36
 spot_angle = 88.59
 spot_angle_attenuation = 1.27456
 
-[node name="OmniLight3D" type="OmniLight3D" parent="SpotLight3D"]
+[node name="OmniLight3D" type="OmniLight3D" parent="SpotLight3D2"]
 transform = Transform3D(-0.980415, 0.192139, 0.0432299, 0.19491, 0.978086, 0.0731943, -0.0282191, 0.0801867, -0.99638, 10.4582, -1.42882, -2.69997)
 light_color = Color(1, 0, 0, 1)
+light_energy = 0.0
+light_indirect_energy = 4.335
 omni_range = 0.922
 omni_attenuation = 6.788
+
+[node name="OmniLight3D" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.9375, -6.14725, 0.402998)
 
 [connection signal="body_entered" from="Triggers/Trigger_Anim_Door_2" to="Triggers/Trigger_Anim_Door_2" method="_on_body_entered"]
 [connection signal="body_entered" from="Triggers/Trigger_Anim_Door" to="Triggers/Trigger_Anim_Door" method="_on_body_entered"]
