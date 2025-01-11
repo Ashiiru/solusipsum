@@ -1,0 +1,46 @@
+[gd_scene load_steps=4 format=3 uid="uid://blh8djsq4yogr"]
+
+[ext_resource type="FontFile" uid="uid://df3c7e4tmftul" path="res://RELIGATH-Demo.otf" id="1_64t1f"]
+[ext_resource type="Script" path="res://scenes/options/options_displaybutton.gd" id="1_eq1o2"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_iglar"]
+
+[node name="winmode_displaybutton" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_eq1o2")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+theme_override_constants/separation = 160
+
+[node name="Label" type="Label" parent="HBoxContainer"]
+custom_minimum_size = Vector2(264, 0)
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("1_64t1f")
+theme_override_font_sizes/font_size = 32
+text = "SCREEN MODE
+"
+
+[node name="VSeparator" type="VSeparator" parent="HBoxContainer"]
+layout_mode = 2
+theme_override_styles/separator = SubResource("StyleBoxEmpty_iglar")
+
+[node name="OptionButton" type="OptionButton" parent="HBoxContainer"]
+custom_minimum_size = Vector2(256, 32)
+layout_mode = 2
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0.568627, 0.568627, 0.568627, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("1_64t1f")
+flat = true

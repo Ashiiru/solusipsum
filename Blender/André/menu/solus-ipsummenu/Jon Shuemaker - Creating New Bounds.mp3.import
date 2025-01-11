@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://b486xj7vp1for"
+path="res://.godot/imported/Jon Shuemaker - Creating New Bounds.mp3-8d4a1ff40cb1584aeda58bc12192ea59.mp3str"
+
+[deps]
+
+source_file="res://Jon Shuemaker - Creating New Bounds.mp3"
+dest_files=["res://.godot/imported/Jon Shuemaker - Creating New Bounds.mp3-8d4a1ff40cb1584aeda58bc12192ea59.mp3str"]
+
+[params]
+
+loop=true
+loop_offset=0.0
+bpm=0.0
+beat_count=0
+bar_beats=4
