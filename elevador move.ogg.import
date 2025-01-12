@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://dy1t07naencnu"
+path="res://.godot/imported/elevador move.ogg-9f1d043a41e650b67de6eea677df2abe.oggvorbisstr"
+
+[deps]
+
+source_file="res://elevador move.ogg"
+dest_files=["res://.godot/imported/elevador move.ogg-9f1d043a41e650b67de6eea677df2abe.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=3 uid="uid://c50acatuftkjs"]
+[gd_scene load_steps=27 format=3 uid="uid://c50acatuftkjs"]
 
 [ext_resource type="Script" path="res://Scripts/cameraManager.gd" id="1_eys4d"]
 [ext_resource type="PackedScene" uid="uid://d23yil13sbds0" path="res://Scenes/Corredor_Afonso.tscn" id="1_h1w7w"]
@@ -6,6 +6,8 @@
 [ext_resource type="PackedScene" uid="uid://cct3ijl60412x" path="res://Scenes/Player.tscn" id="2_em33v"]
 [ext_resource type="Script" path="res://Scripts/trigger_anim_door_2.gd" id="2_kljut"]
 [ext_resource type="Script" path="res://Scripts/abrir_fechar_porta.gd" id="2_m1rg1"]
+[ext_resource type="AudioStream" uid="uid://dbg2ctex56sjr" path="res://luz corredor.ogg" id="6_ejxa8"]
+[ext_resource type="AudioStream" uid="uid://bps8ji3upc424" path="res://exit luz.ogg" id="7_20qy6"]
 [ext_resource type="PackedScene" uid="uid://cayx7gq1jdaa2" path="res://Scenes/Spawner.tscn" id="7_o3jd7"]
 [ext_resource type="PackedScene" uid="uid://ckqry7v5vyi8j" path="res://Scenes/LevelLoader.tscn" id="8_vo6sh"]
 
@@ -222,10 +224,26 @@ transform = Transform3D(0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, 0, 0, 0)
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Corredor_Afonso_v3/porta1/StaticBody3D"]
 shape = SubResource("ConvexPolygonShape3D_05g85")
 
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="Corredor_Afonso_v3/luz corredor" index="0"]
+transform = Transform3D(4, 0, 0, 0, 0.119782, 3.99821, 0, -3.99821, 0.119782, 0, 0, 0)
+stream = ExtResource("6_ejxa8")
+volume_db = -18.166
+unit_size = 17.85
+autoplay = true
+max_distance = 15.0
+emission_angle_degrees = 47.0
+emission_angle_filter_attenuation_db = -7.3
+
 [node name="StaticBody3D" type="StaticBody3D" parent="Corredor_Afonso_v3/Corredor Principal" index="0"]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Corredor_Afonso_v3/Corredor Principal/StaticBody3D"]
 shape = SubResource("ConcavePolygonShape3D_3nods")
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="Corredor_Afonso_v3/placaPorta1" index="0"]
+stream = ExtResource("7_20qy6")
+volume_db = -22.907
+autoplay = true
+max_distance = 6.0
 
 [node name="elevador" parent="Corredor_Afonso_v3" index="8"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -47.4442, 8.46308, 19.9499)

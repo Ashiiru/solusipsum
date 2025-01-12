@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://dblc4aodhller"
+path="res://.godot/imported/porta fecha.ogg-2e10e092da5ac86d82751c366787c00b.oggvorbisstr"
+
+[deps]
+
+source_file="res://porta fecha.ogg"
+dest_files=["res://.godot/imported/porta fecha.ogg-2e10e092da5ac86d82751c366787c00b.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=119.66
+beat_count=0
+bar_beats=4

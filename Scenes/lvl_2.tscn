@@ -1,4 +1,4 @@
-[gd_scene load_steps=77 format=4 uid="uid://cgahhes3omp5v"]
+[gd_scene load_steps=79 format=4 uid="uid://cgahhes3omp5v"]
 
 [ext_resource type="PackedScene" uid="uid://bcpxnpgi6m2j5" path="res://Blender/Rui/CORREDOR_RUI.blend" id="1_d2nc4"]
 [ext_resource type="PackedScene" uid="uid://cct3ijl60412x" path="res://Scenes/Player.tscn" id="2_e0ocd"]
@@ -19,6 +19,8 @@
 [ext_resource type="Script" path="res://Scripts/muffle.gd" id="8_3nnuo"]
 [ext_resource type="AudioStream" uid="uid://bps8ji3upc424" path="res://exit luz.ogg" id="9_m37qp"]
 [ext_resource type="AudioStream" uid="uid://b0wqfsge54oi2" path="res://fim corredor.ogg" id="14_0s32q"]
+[ext_resource type="AudioStream" uid="uid://cs54icwdl5xr4" path="res://porta abre.ogg" id="16_4x4g3"]
+[ext_resource type="AudioStream" uid="uid://dblc4aodhller" path="res://porta fecha.ogg" id="17_3r24b"]
 
 [sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_a2ptj"]
 points = PackedVector3Array(-1.39863, -0.168326, 1.23984, 1.375, 0.93283, 1.99533, 1.375, 0.93283, 0.0230586, 1.375, -1.03944, 1.99533, -0.620157, -1.0625, 0, -0.60177, 0.9375, 0.0183887, 1.375, -1.03944, 0.0230586, -0.60177, 0.9375, 2, 2.23433, -0.0533056, 1.58572, -0.60177, -1.04411, 2, -1.45643, -0.0533056, 1.9318, 2.23433, -0.226039, 1.9318, 2.17653, -0.168326, 1.29715, -1.45643, -0.226039, 1.9318, -1.39863, -0.0533056, 1.23984, 2.23433, -0.0533056, 1.9318, -1.45643, -0.226039, 1.58572, 2.23433, -0.226039, 1.58572, -1.45643, -0.0533056, 1.58572, 2.17653, -0.0533056, 1.29715)
@@ -587,7 +589,7 @@ transform = Transform3D(0, 0, -2.94851, 0, 1.4507, 0, 0.683862, 0, 0, 49.474, 14
 [node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="CORREDOR_RUI/AC" index="0"]
 transform = Transform3D(0.252036, -4.15423, 4.09865, -0.0825823, 1.7451, 2.15442, -1.35475, -0.0755134, -0.0231057, -1.20207, -1.61329, -0.0164585)
 stream = ExtResource("5_4lnpt")
-volume_db = -10.48
+volume_db = -17.467
 unit_size = 13.05
 autoplay = true
 max_distance = 8.0
@@ -792,15 +794,17 @@ omni_attenuation = 1.09
 [node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="CORREDOR_RUI/OmniLight3D"]
 stream = ExtResource("14_0s32q")
 volume_db = -10.48
-unit_size = 30.03
+unit_size = 40.06
 autoplay = true
-max_distance = 16.0
+max_distance = 17.0
 
 [node name="Triggers" type="Node3D" parent="CORREDOR_RUI"]
 
 [node name="abrir porta 1" type="Area3D" parent="CORREDOR_RUI/Triggers"]
 script = ExtResource("3_eipdi")
 animation_player_path = NodePath("open door1")
+open_sound_path = NodePath("open door1/porta abre 1")
+close_sound_path = NodePath("open door1/porta fecha 1")
 
 [node name="open door1" type="AnimationPlayer" parent="CORREDOR_RUI/Triggers/abrir porta 1"]
 reset_on_save = false
@@ -809,6 +813,18 @@ libraries = {
 "": SubResource("AnimationLibrary_5qhj1")
 }
 
+[node name="porta abre 1" type="AudioStreamPlayer3D" parent="CORREDOR_RUI/Triggers/abrir porta 1/open door1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.5377, -0.914656, -12.6656)
+stream = ExtResource("16_4x4g3")
+volume_db = -23.88
+max_distance = 5.0
+
+[node name="porta fecha 1" type="AudioStreamPlayer3D" parent="CORREDOR_RUI/Triggers/abrir porta 1/open door1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.53545, -0.924422, -12.6559)
+stream = ExtResource("17_3r24b")
+volume_db = -8.774
+max_distance = 10.0
+
 [node name="CollisionShape3D" type="CollisionShape3D" parent="CORREDOR_RUI/Triggers/abrir porta 1"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -26.1569, -4.44212, -47.1876)
 shape = SubResource("BoxShape3D_66liy")
@@ -816,6 +832,8 @@ shape = SubResource("BoxShape3D_66liy")
 [node name="abrir porta 2" type="Area3D" parent="CORREDOR_RUI/Triggers"]
 script = ExtResource("3_eipdi")
 animation_player_path = NodePath("open door2")
+open_sound_path = NodePath("porta abre 2")
+close_sound_path = NodePath("porta fecha 2")
 
 [node name="open door2" type="AnimationPlayer" parent="CORREDOR_RUI/Triggers/abrir porta 2"]
 root_node = NodePath("../../../porta2")
@@ -826,6 +844,18 @@ libraries = {
 [node name="CollisionShape3D" type="CollisionShape3D" parent="CORREDOR_RUI/Triggers/abrir porta 2"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24.792, -4.04446, -47.3601)
 shape = SubResource("BoxShape3D_pvije")
+
+[node name="porta abre 2" type="AudioStreamPlayer3D" parent="CORREDOR_RUI/Triggers/abrir porta 2"]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 24.0364, -3.71273, -50.5997)
+stream = ExtResource("16_4x4g3")
+volume_db = -23.88
+max_distance = 5.0
+
+[node name="porta fecha 2" type="AudioStreamPlayer3D" parent="CORREDOR_RUI/Triggers/abrir porta 2"]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 24.0779, -3.74796, -50.6031)
+stream = ExtResource("17_3r24b")
+volume_db = -8.774
+max_distance = 10.0
 
 [node name="portao fecha" type="Area3D" parent="CORREDOR_RUI/Triggers"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 47.5985, 0, -27.6415)
