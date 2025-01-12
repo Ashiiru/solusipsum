@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://ctr2i5x1lpt6p"
-path="res://.godot/imported/beige_wall_001_disp_2k.png-ac1305e4893f0ff727c98d664a08d448.ctex"
+path="res://.godot/imported/beige_wall_001_disp_2k.png-a50f0282bde322270c6219814df795c9.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Blender/André/Objs/texturas/beige_wall_001_disp_2k.png"
-dest_files=["res://.godot/imported/beige_wall_001_disp_2k.png-ac1305e4893f0ff727c98d664a08d448.ctex"]
+source_file="res://Blender/André/texturas/beige_wall_001_disp_2k.png"
+dest_files=["res://.godot/imported/beige_wall_001_disp_2k.png-a50f0282bde322270c6219814df795c9.ctex"]
 
 [params]
 

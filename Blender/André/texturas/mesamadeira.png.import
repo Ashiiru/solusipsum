@@ -3,7 +3,7 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://du6wwa22kohwd"
-path.s3tc="res://.godot/imported/mesamadeira.png-75631bccb87febd2d41349103722164b.s3tc.ctex"
+path.s3tc="res://.godot/imported/mesamadeira.png-ee567e98314882038156ecb0607b7e6e.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://Blender/André/Objs/texturas/mesamadeira.png"
-dest_files=["res://.godot/imported/mesamadeira.png-75631bccb87febd2d41349103722164b.s3tc.ctex"]
+source_file="res://Blender/André/texturas/mesamadeira.png"
+dest_files=["res://.godot/imported/mesamadeira.png-ee567e98314882038156ecb0607b7e6e.s3tc.ctex"]
 
 [params]
 

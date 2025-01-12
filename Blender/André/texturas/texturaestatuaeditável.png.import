@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://ctc7pmfspwyva"
-path="res://.godot/imported/texturaestatuaeditável.png-34d60b55c995fb072626ce2b464f48d4.ctex"
+path="res://.godot/imported/texturaestatuaeditável.png-a5bc6b1dfa92dc827e8f573d366672bf.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Blender/André/Objs/estatua/texturas/texturaestatuaeditável.png"
-dest_files=["res://.godot/imported/texturaestatuaeditável.png-34d60b55c995fb072626ce2b464f48d4.ctex"]
+source_file="res://Blender/André/texturas/texturaestatuaeditável.png"
+dest_files=["res://.godot/imported/texturaestatuaeditável.png-a5bc6b1dfa92dc827e8f573d366672bf.ctex"]
 
 [params]
 

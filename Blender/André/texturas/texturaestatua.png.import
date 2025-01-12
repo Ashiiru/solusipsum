@@ -3,7 +3,7 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://6faa7vgdfao8"
-path.s3tc="res://.godot/imported/texturaestatua.png-73648cf2ac8f5306e649a0822e19a295.s3tc.ctex"
+path.s3tc="res://.godot/imported/texturaestatua.png-ef64bf265ad0a7d98d53cdcfea5fc870.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://Blender/André/Objs/estatua/texturas/texturaestatua.png"
-dest_files=["res://.godot/imported/texturaestatua.png-73648cf2ac8f5306e649a0822e19a295.s3tc.ctex"]
+source_file="res://Blender/André/texturas/texturaestatua.png"
+dest_files=["res://.godot/imported/texturaestatua.png-ef64bf265ad0a7d98d53cdcfea5fc870.s3tc.ctex"]
 
 [params]
 

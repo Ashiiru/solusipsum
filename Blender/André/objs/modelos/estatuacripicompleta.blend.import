@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://dkbbvu0dkayl5"
-path="res://.godot/imported/boneco.blend-a81ee0ebb14669fc6e3b2de17f80df70.scn"
+uid="uid://d0lafr385gkqd"
+path="res://.godot/imported/estatuacripicompleta.blend-448d8fd8223ec0086bc5cc8148c85f58.scn"
 
 [deps]
 
-source_file="res://Blender/André/objs/modelos/bonecoteste/boneco.blend"
-dest_files=["res://.godot/imported/boneco.blend-a81ee0ebb14669fc6e3b2de17f80df70.scn"]
+source_file="res://Blender/André/objs/modelos/estatuacripicompleta.blend"
+dest_files=["res://.godot/imported/estatuacripicompleta.blend-448d8fd8223ec0086bc5cc8148c85f58.scn"]
 
 [params]
 
