@@ -10,7 +10,8 @@ extends Area3D
 var animation_player: AnimationPlayer
 var open_sound: AudioStreamPlayer3D
 var close_sound: AudioStreamPlayer3D
-var is_playing_animation: bool = false
+var is_playing_animation: bool = false  # Tracks if an animation is currently playing
+var is_door_open: bool = false  # Tracks the state of the door (open or closed)
 
 func _ready() -> void:
 	# Cache the AnimationPlayer node
@@ -32,20 +33,25 @@ func _ready() -> void:
 		push_error("Close sound path not set!")
 
 func _on_body_entered(body: Node3D) -> void:
-	if body.is_in_group(player_group) and not is_playing_animation:
+	# Only play the open animation if the door is closed and no animation is playing
+	if body.is_in_group(player_group) and not is_playing_animation and not is_door_open:
 		play_animation(open_animation)
 		if open_sound:
 			open_sound.play()
+		is_door_open = true  # Mark the door as open
 		print("Porta Abriu")
 
 func _on_body_exited(body: Node3D) -> void:
-	if body.is_in_group(player_group) and not is_playing_animation:
+	# Only play the close animation if the door is open and no animation is playing
+	if body.is_in_group(player_group) and not is_playing_animation and is_door_open:
 		play_animation(close_animation)
 		if close_sound:
 			close_sound.play()
+		is_door_open = false  # Mark the door as closed
 		print("Porta Fechou")
 
 func play_animation(animation_name: String) -> void:
+	# Play the animation if no animation is currently playing
 	if animation_player and not animation_player.is_playing():
 		animation_player.play(animation_name)
 		is_playing_animation = true

@@ -1,4 +1,4 @@
-[gd_scene load_steps=79 format=4 uid="uid://cgahhes3omp5v"]
+[gd_scene load_steps=80 format=4 uid="uid://cgahhes3omp5v"]
 
 [ext_resource type="PackedScene" uid="uid://bcpxnpgi6m2j5" path="res://Blender/Rui/CORREDOR_RUI.blend" id="1_d2nc4"]
 [ext_resource type="PackedScene" uid="uid://cct3ijl60412x" path="res://Scenes/Player.tscn" id="2_e0ocd"]
@@ -18,6 +18,7 @@
 [ext_resource type="AudioStream" uid="uid://bl0mdcn7abpre" path="res://static.ogg" id="7_r8dln"]
 [ext_resource type="Script" path="res://Scripts/muffle.gd" id="8_3nnuo"]
 [ext_resource type="AudioStream" uid="uid://bps8ji3upc424" path="res://exit luz.ogg" id="9_m37qp"]
+[ext_resource type="AudioStream" uid="uid://bpn65gsvkbv2o" path="res://escotilha.ogg" id="10_vivl8"]
 [ext_resource type="AudioStream" uid="uid://b0wqfsge54oi2" path="res://fim corredor.ogg" id="14_0s32q"]
 [ext_resource type="AudioStream" uid="uid://cs54icwdl5xr4" path="res://porta abre.ogg" id="16_4x4g3"]
 [ext_resource type="AudioStream" uid="uid://dblc4aodhller" path="res://porta fecha.ogg" id="17_3r24b"]
@@ -634,11 +635,18 @@ libraries = {
 "": SubResource("AnimationLibrary_h8p4w")
 }
 
+[node name="escotilha som" type="AudioStreamPlayer3D" parent="CORREDOR_RUI/roda drt/escotilha drt"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 22.9811, -2.99821, -15.021)
+stream = ExtResource("10_vivl8")
+volume_db = -19.179
+max_db = 0.773
+max_distance = 6.0
+
 [node name="roda esq" parent="CORREDOR_RUI" index="24"]
 transform = Transform3D(0.00510518, 0.648967, 0.00185148, 0.00407676, -0.00659972, 0.187893, 0.257297, -0.012772, -0.00301382, 96.3157, -10.7252, -69.0784)
 
 [node name="ESCOTILA ESQ" parent="CORREDOR_RUI/roda esq" index="0"]
-transform = Transform3D(0.0272435, 1.28662, 37.0666, 28.7115, -3.79184, 0.0145761, 1.80646, 60.2473, -0.790664, -0.55368, 0.257095, -0.381313)
+transform = Transform3D(0.0272435, 1.28662, 37.0666, 28.7115, -3.79184, 0.0145761, 1.80646, 60.2473, -0.790665, -0.55368, 0.257095, -0.381313)
 rotation_edit_mode = 1
 
 [node name="StaticBody3D" type="StaticBody3D" parent="CORREDOR_RUI/roda esq/ESCOTILA ESQ" index="0"]
@@ -867,6 +875,7 @@ shape = SubResource("BoxShape3D_5akxx")
 [node name="escotilha" type="Area3D" parent="CORREDOR_RUI/Triggers"]
 script = ExtResource("4_xy2o4")
 animation_player_path = NodePath("../../roda drt/escotilha drt")
+sound_player_path = NodePath("../../roda drt/escotilha drt/escotilha som")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="CORREDOR_RUI/Triggers/escotilha"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 97.4555, -4.80103, -60.074)
