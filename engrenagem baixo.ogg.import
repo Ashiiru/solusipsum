@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://br2ewpxh8lg82"
+path="res://.godot/imported/engrenagem baixo.ogg-187cc90c8d94e3dfbb4b04664e882b61.oggvorbisstr"
+
+[deps]
+
+source_file="res://engrenagem baixo.ogg"
+dest_files=["res://.godot/imported/engrenagem baixo.ogg-187cc90c8d94e3dfbb4b04664e882b61.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

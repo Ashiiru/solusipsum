@@ -37,11 +37,11 @@ func _process(delta):
 		lowpass_filter.cutoff_hz = current_lowpass_cutoff
 
 func _on_body_entered(body):
-	if body.is_in_group("P Player"):
+	if body.is_in_group("Player"):
 		target_volume_db = -20
 		target_lowpass_cutoff = 1000
 
 func _on_body_exited(body):
-	if body.is_in_group("P Player"):
+	if body.is_in_group("Player"):
 		target_volume_db = 0
 		target_lowpass_cutoff = 20000
