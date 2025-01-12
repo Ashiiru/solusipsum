@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=3 uid="uid://c50acatuftkjs"]
+[gd_scene load_steps=32 format=3 uid="uid://c50acatuftkjs"]
 
 [ext_resource type="Script" path="res://Scripts/cameraManager.gd" id="1_eys4d"]
 [ext_resource type="PackedScene" uid="uid://d23yil13sbds0" path="res://Scenes/Corredor_Afonso.tscn" id="1_h1w7w"]
@@ -9,7 +9,12 @@
 [ext_resource type="AudioStream" uid="uid://dbg2ctex56sjr" path="res://luz corredor.ogg" id="6_ejxa8"]
 [ext_resource type="AudioStream" uid="uid://bps8ji3upc424" path="res://exit luz.ogg" id="7_20qy6"]
 [ext_resource type="PackedScene" uid="uid://cayx7gq1jdaa2" path="res://Scenes/Spawner.tscn" id="7_o3jd7"]
+[ext_resource type="AudioStream" uid="uid://bio1uxkmv34o6" path="res://elevador abre.ogg" id="8_kcby4"]
 [ext_resource type="PackedScene" uid="uid://ckqry7v5vyi8j" path="res://Scenes/LevelLoader.tscn" id="8_vo6sh"]
+[ext_resource type="AudioStream" uid="uid://dobgcohlhv6wc" path="res://elevador fecha.ogg" id="9_2urop"]
+[ext_resource type="AudioStream" uid="uid://dy1t07naencnu" path="res://elevador move.ogg" id="10_008cw"]
+[ext_resource type="AudioStream" uid="uid://45xy3vnfc1mu" path="res://elevador sino.ogg" id="11_kdccc"]
+[ext_resource type="AudioStream" uid="uid://b0wqfsge54oi2" path="res://fim corredor.ogg" id="15_f5a4w"]
 
 [sub_resource type="Environment" id="Environment_hmgo4"]
 background_mode = 2
@@ -191,6 +196,9 @@ shape = SubResource("BoxShape3D_0qyi5")
 [node name="Trigger_Anim_Door" type="Area3D" parent="Triggers"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.48502, 1.1825, 1.49692)
 script = ExtResource("2_m1rg1")
+animation_player_path = NodePath("AnimationPlayer")
+open_sound_path = NodePath("../../Corredor_Afonso_v3/elevador/elevador abre")
+close_sound_path = NodePath("../../Corredor_Afonso_v3/elevador/elevdor fecha")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Triggers/Trigger_Anim_Door"]
 root_node = NodePath("../../../Corredor_Afonso_v3/elevador/ElevadorEsqrd")
@@ -277,6 +285,31 @@ shape = SubResource("ConcavePolygonShape3D_ngkfu")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Corredor_Afonso_v3/elevador/StaticBody3D2"]
 shape = SubResource("ConcavePolygonShape3D_8lll2")
 
+[node name="elevador abre" type="AudioStreamPlayer3D" parent="Corredor_Afonso_v3/elevador" index="5"]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 0.148407, -0.367506, -4.53408)
+stream = ExtResource("8_kcby4")
+volume_db = -11.179
+max_db = 0.118
+
+[node name="elevdor fecha" type="AudioStreamPlayer3D" parent="Corredor_Afonso_v3/elevador" index="6"]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 0, -0.421263, -4.45475)
+stream = ExtResource("9_2urop")
+volume_db = -11.179
+max_db = 0.118
+
+[node name="elevador move" type="AudioStreamPlayer3D" parent="Corredor_Afonso_v3/elevador" index="7"]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 0, -9.53674e-07, 0)
+stream = ExtResource("10_008cw")
+volume_db = -5.59
+max_db = 0.511
+
+[node name="elevador sino" type="AudioStreamPlayer3D" parent="Corredor_Afonso_v3/elevador" index="8"]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 0.158108, -30.1984, -4.9542)
+stream = ExtResource("11_kdccc")
+volume_db = -18.167
+max_db = 1.035
+max_distance = 7.0
+
 [node name="StaticBody3D" type="StaticBody3D" parent="Corredor_Afonso_v3/Room" index="0"]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Corredor_Afonso_v3/Room/StaticBody3D"]
@@ -332,6 +365,18 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -31.6526, 8.53722, 4.32723)
 light_color = Color(1, 0.831373, 0.705882, 1)
 light_energy = 9.304
 omni_range = 4.721
+
+[node name="ominous porta" type="AudioStreamPlayer3D" parent="."]
+transform = Transform3D(-0.966923, 0.0809683, -0.241878, -0.00661475, -0.955921, -0.29355, -0.254984, -0.28224, 0.924837, 0.437186, 1.60248, 4.96946)
+stream = ExtResource("15_f5a4w")
+volume_db = -4.192
+unit_size = 2.15
+max_db = 0.904
+autoplay = true
+max_distance = 5.0
+bus = &"MuffledBus"
+emission_angle_enabled = true
+emission_angle_filter_attenuation_db = -15.9
 
 [connection signal="body_entered" from="Triggers/Trigger_Anim_Door_2" to="Triggers/Trigger_Anim_Door_2" method="_on_body_entered"]
 [connection signal="body_entered" from="Triggers/Trigger_Anim_Door" to="Triggers/Trigger_Anim_Door" method="_on_body_entered"]
