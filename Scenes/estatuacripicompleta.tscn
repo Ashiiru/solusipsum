@@ -1,0 +1,5 @@
+[gd_scene load_steps=2 format=3 uid="uid://dgqypbg775qx"]
+
+[ext_resource type="PackedScene" uid="uid://civ6imbnbkuf3" path="res://Blender/André/objs/modelos/estatua/estatuacripicompleta.blend" id="1_fgfpq"]
+
+[node name="estatuacripicompleta" instance=ExtResource("1_fgfpq")]
