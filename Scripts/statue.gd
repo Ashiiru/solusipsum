@@ -29,7 +29,9 @@ func _physics_process(delta):
 
 		# ✅ Rotate the statue towards the player
 		if direction.length() > 0:
-			look_at(player.global_transform.origin, Vector3.UP)
+			var target_position = player.global_transform.origin
+			target_position.y = global_transform.origin.y
+			look_at(target_position, Vector3.UP)
 
 		# Stop moving if too close
 		if global_transform.origin.distance_to(player.global_transform.origin) > 1.5:
