@@ -1,4 +1,4 @@
-[gd_scene load_steps=32 format=3 uid="uid://c50acatuftkjs"]
+[gd_scene load_steps=33 format=3 uid="uid://c50acatuftkjs"]
 
 [ext_resource type="Script" path="res://Scripts/cameraManager.gd" id="1_eys4d"]
 [ext_resource type="PackedScene" uid="uid://d23yil13sbds0" path="res://Scenes/Corredor_Afonso.tscn" id="1_h1w7w"]
@@ -14,6 +14,7 @@
 [ext_resource type="AudioStream" uid="uid://dobgcohlhv6wc" path="res://elevador fecha.ogg" id="9_2urop"]
 [ext_resource type="AudioStream" uid="uid://dy1t07naencnu" path="res://elevador move.ogg" id="10_008cw"]
 [ext_resource type="AudioStream" uid="uid://45xy3vnfc1mu" path="res://elevador sino.ogg" id="11_kdccc"]
+[ext_resource type="Script" path="res://Scripts/bixo.gd" id="12_8n4hl"]
 [ext_resource type="AudioStream" uid="uid://b0wqfsge54oi2" path="res://fim corredor.ogg" id="15_f5a4w"]
 
 [sub_resource type="Environment" id="Environment_hmgo4"]
@@ -319,6 +320,11 @@ max_db = 0.511
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Corredor_Afonso_v3/Room/StaticBody3D"]
 shape = SubResource("ConcavePolygonShape3D_yo1kp")
 
+[node name="Plane_011" parent="Corredor_Afonso_v3" index="13"]
+transform = Transform3D(-0.399789, 0, -0.916607, 0, 1, 0, 0.916607, 0, -0.399789, -24.8304, 6.04828, -0.0753997)
+script = ExtResource("12_8n4hl")
+player_head_path = NodePath("../../Player/Head")
+
 [node name="Player" parent="." groups=["Player"] instance=ExtResource("2_em33v")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 17.7683, 1.93982, 1.8554)
 
@@ -357,10 +363,11 @@ omni_attenuation = 6.788
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.9375, -6.14725, 0.402998)
 
 [node name="raios de sol" type="SpotLight3D" parent="."]
-transform = Transform3D(0.0996196, 0.305533, -0.946956, -0.155212, 0.944812, 0.288512, 0.982845, 0.118237, 0.141544, -23.7589, 6.6483, 2.22492)
+transform = Transform3D(0.0996196, 0.305533, -0.946956, -0.155212, 0.944812, 0.288512, 0.982845, 0.118237, 0.141544, -25.3638, 6.21039, 2.06578)
 light_color = Color(1, 0.933333, 0.803922, 1)
 light_energy = 10.0
-spot_range = 30.4782
+shadow_enabled = true
+spot_range = 31.9951
 spot_attenuation = 0.55
 spot_angle = 5.33
 
