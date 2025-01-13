@@ -3,68 +3,61 @@ extends CharacterBody3D
 const SPEED = 3.0
 const MAX_SPEED = 3.0  
 
-@export var player: Node3D  # Player set manually in the Inspector
 @export var detection_area: Area3D  # Assign the Area3D in the Inspector
 var can_move = false  # Statue won't move until the player enters the area
+var has_been_activated = false  # Prevents re-activation before the player enters the area once
 
 func _ready():
-	# ✅ Connect the signals for entering and exiting the Area3D
+	# ✅ Connect the signal for entering the Area3D (Only Entry)
 	if detection_area != null:
 		detection_area.body_entered.connect(_on_area_entered)
-		detection_area.body_exited.connect(_on_area_exited)
 	else:
 		print("⚠️ No detection area assigned!")
 
 func _physics_process(delta):
-	# Prevent errors if player is not assigned in the Inspector
-	if player == null:
-		print("⚠️ Player not assigned in the Inspector!")
-		return
+	if not can_move:
+		return  # ✅ No movement before activation!
 
-	# Move only if allowed and inside the detection area
-	if can_move:
+	# ✅ Move towards the player (constant check after activation)
+	var players = get_tree().get_nodes_in_group("Player")  # Fetch player from the group
+	if players.size() > 0:
+		var player = players[0]  # Assuming only one player
 		var direction = (player.global_transform.origin - global_transform.origin).normalized()
 		direction.y = 0  # Prevent vertical movement
 		velocity = direction * SPEED
 
-		# ✅ Rotate the statue towards the player
+		# ✅ Rotate statue to face the player
 		if direction.length() > 0:
 			var target_position = player.global_transform.origin
 			target_position.y = global_transform.origin.y
 			look_at(target_position, Vector3.UP)
 
-		# Stop moving if too close
-		if global_transform.origin.distance_to(player.global_transform.origin) > 1.5:
-			if test_move(global_transform, direction * SPEED * delta):
-				velocity = Vector3.ZERO
-			else:
-				velocity = direction * SPEED
+		# ✅ Stop when close enough
+		if global_transform.origin.distance_to(player.global_transform.origin) <= 1.5:
+			velocity = Vector3.ZERO
 		else:
-			velocity = Vector3.ZERO  # Stop when near the player
+			velocity = direction * SPEED
 
-		# Apply movement with physics
 		move_and_slide()
 
-# ✅ Trigger when player enters the detection area
+# ✅ FIXED: Using Groups to Trigger Activation (No More NodePath Errors!)
 func _on_area_entered(body):
-	if body == player:
-		print("👀 Player entered the area!")
+	if body.is_in_group("Player") and not has_been_activated:
+		has_been_activated = true
 		can_move = true
+		print("👀 Player entered the area! Statue Activated!")
+	else:
+		print("⚠️ Non-player body detected:", body.name)
 
-# ✅ Trigger when player exits the detection area
-func _on_area_exited(body):
-	if body == player:
-		print("🚫 Player exited the area!")
+# ✅ Freeze Statue (Only When Activated)
+func freeze_statue():
+	if has_been_activated:
 		can_move = false
 		velocity = Vector3.ZERO
+		print("❄️ Statue Frozen!")
 
-# Called when the player looks at the statue (FREEZES)
-func freeze_statue():
-	can_move = false
-	velocity = Vector3.ZERO
-	print("❄️ Statue Frozen!")
-
-# Called when the player looks away (MOVES AGAIN)
+# ✅ Unfreeze Statue (Only When Activated)
 func unfreeze_statue():
-	can_move = true
-	print("🏃 Statue Resumed Moving!")
+	if has_been_activated:
+		can_move = true
+		print("🏃 Statue Resumed Moving!")

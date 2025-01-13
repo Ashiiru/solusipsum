@@ -12,9 +12,8 @@ points = PackedVector3Array(0.5, 0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, 
 
 [node name="Node3D" type="Node3D"]
 
-[node name="Statue" parent="." node_paths=PackedStringArray("player") instance=ExtResource("1_6xb52")]
+[node name="Statue" parent="." instance=ExtResource("1_6xb52")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.226665, -11.8727, 6.8845)
-player = NodePath("../Player")
 
 [node name="CollisionShape3D" parent="Statue" index="0"]
 shape = SubResource("CapsuleShape3D_dvwmp")

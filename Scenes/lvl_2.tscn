@@ -1,7 +1,6 @@
 [gd_scene load_steps=90 format=4 uid="uid://cgahhes3omp5v"]
 
 [ext_resource type="PackedScene" uid="uid://bcpxnpgi6m2j5" path="res://Blender/Rui/CORREDOR_RUI.blend" id="1_d2nc4"]
-[ext_resource type="Script" path="res://Scenes/lvl_2.gd" id="1_jtc51"]
 [ext_resource type="Shader" path="res://Scripts/pixelShader.gdshader" id="2_33xtb"]
 [ext_resource type="PackedScene" uid="uid://cct3ijl60412x" path="res://Scenes/Player.tscn" id="2_e0ocd"]
 [ext_resource type="AudioStream" uid="uid://vl0ibao2qyvp" path="res://vendingmachine.ogg" id="2_ljej8"]
@@ -26,6 +25,10 @@
 [ext_resource type="AudioStream" uid="uid://cs54icwdl5xr4" path="res://porta abre.ogg" id="16_4x4g3"]
 [ext_resource type="AudioStream" uid="uid://dblc4aodhller" path="res://porta fecha.ogg" id="17_3r24b"]
 [ext_resource type="AudioStream" uid="uid://b60w6knh5xeme" path="res://rua.ogg" id="23_5q51k"]
+
+[sub_resource type="GDScript" id="GDScript_fyd87"]
+script/source = "extends Node3D
+"
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_tlsth"]
 shader = ExtResource("2_33xtb")
@@ -482,7 +485,7 @@ file = "res://paisagem.ogg"
 albedo_color = Color(0.188235, 0.0823529, 0.396078, 1)
 
 [node name="Lvl_2" type="Node3D"]
-script = ExtResource("1_jtc51")
+script = SubResource("GDScript_fyd87")
 
 [node name="SubViewportContainer" type="SubViewportContainer" parent="."]
 material = SubResource("ShaderMaterial_tlsth")

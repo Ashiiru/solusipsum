@@ -70,7 +70,7 @@ material = SubResource("StandardMaterial3D_all1o")
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_ngw0i")
 
-[node name="CharacterBody3D" parent="." instance=ExtResource("1_5et72")]
+[node name="CharacterBody3D" parent="." groups=["Player"] instance=ExtResource("1_5et72")]
 transform = Transform3D(-0.00994825, 0, 0.999951, 0, 1, 0, -0.999951, 0, -0.00994825, 12.8542, -2.26166, 4.5985)
 
 [node name="CORREDOR__ANDRE" parent="." instance=ExtResource("2_2kyho")]
@@ -157,13 +157,12 @@ omni_range = 7.0
 [node name="TriggerEstatua" type="Area3D" parent="CORREDOR__ANDRE"]
 transform = Transform3D(1.17518, 0, 0.0551526, 0, 1.17647, 0, -0.0551526, 0, 1.17518, -11.6342, -9.89489, 16.6293)
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="CORREDOR__ANDRE/TriggerEstatua"]
+[node name="CollisionTriggerEstatua" type="CollisionShape3D" parent="CORREDOR__ANDRE/TriggerEstatua"]
 transform = Transform3D(1, 0, -4.35859e-07, 0, 1, 0, 4.35859e-07, 0, 1, -13.3111, 0, -12.5482)
 shape = SubResource("BoxShape3D_8dmvf")
 
-[node name="Statue" parent="." node_paths=PackedStringArray("player", "detection_area") instance=ExtResource("3_hqy7q")]
+[node name="Statue" parent="." node_paths=PackedStringArray("detection_area") instance=ExtResource("3_hqy7q")]
 transform = Transform3D(0.19978, 0, 0.00937595, 0, 0.2, 0, -0.00937595, 0, 0.19978, -2.38115, -2.31609, 6.71194)
-player = NodePath("../CharacterBody3D")
 detection_area = NodePath("../CORREDOR__ANDRE/TriggerEstatua")
 
 [node name="Estatua" type="MeshInstance3D" parent="."]
