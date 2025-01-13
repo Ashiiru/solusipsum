@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://tsdvj7i73rss"]
+
+[ext_resource type="AudioStream" uid="uid://mfdw2oja1mu6" path="res://factory-fluorescent-light-buzz-6871_1.ogg" id="1_la8yj"]
+
+[node name="lvl3somluzbckrg" type="AudioStreamPlayer3D"]
+stream = ExtResource("1_la8yj")
+autoplay = true

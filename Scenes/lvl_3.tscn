@@ -1,9 +1,12 @@
-[gd_scene load_steps=17 format=3 uid="uid://wywm6xdl3ax8"]
+[gd_scene load_steps=22 format=3 uid="uid://wywm6xdl3ax8"]
 
 [ext_resource type="PackedScene" uid="uid://cct3ijl60412x" path="res://Scenes/Player.tscn" id="1_5et72"]
 [ext_resource type="PackedScene" uid="uid://bnythxymj8ikl" path="res://Blender/André/corredor/CORREDOR__ANDRE.blend" id="2_2kyho"]
 [ext_resource type="PackedScene" uid="uid://du5wyhgwo32g3" path="res://Scenes/Statue.tscn" id="3_hqy7q"]
 [ext_resource type="ArrayMesh" uid="uid://c5yo4vk0kf0fe" path="res://estatua.tres" id="4_lcglg"]
+[ext_resource type="PackedScene" uid="uid://37xg0r2btkyp" path="res://Scenes/grupovelas.tscn" id="5_gaadx"]
+[ext_resource type="Texture2D" uid="uid://2enhss48kinn" path="res://Blender/André/texturas/photo-1691989949393-7cc2a4a1c518.jpg" id="6_677d5"]
+[ext_resource type="PackedScene" uid="uid://tsdvj7i73rss" path="res://Scenes/lvl_3_somluzbckrg.tscn" id="7_hpxx0"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_ptuln"]
 sky_top_color = Color(0, 0, 0, 1)
@@ -15,9 +18,15 @@ ground_horizon_color = Color(0.5, 0.5, 0.5, 1)
 sky_material = SubResource("ProceduralSkyMaterial_ptuln")
 
 [sub_resource type="Environment" id="Environment_ngw0i"]
-background_mode = 2
+background_mode = 1
+background_color = Color(1, 0.643137, 0.101961, 1)
+background_energy_multiplier = 0.14
 sky = SubResource("Sky_el1ej")
-tonemap_mode = 2
+tonemap_mode = 3
+tonemap_exposure = 0.83
+tonemap_white = 3.24
+ssil_enabled = true
+ssil_radius = 11.19
 glow_enabled = true
 
 [sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_qwumk"]
@@ -46,6 +55,15 @@ points = PackedVector3Array(-1.58246, 0.418701, -1.42126, -1.61462, 0.422052, 1.
 
 [sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_tqqp1"]
 points = PackedVector3Array(-1.58246, 0.418701, -1.42126, -1.61462, 0.422052, 1.24497, 1.06989, -4.74697, 1.23109, 1.06989, -4.74697, -1.28235, -1.69161, -4.58549, 0.818575, -1.48526, -4.92499, -1.32406, 1.15855, 0.132115, 1.31975, 1.06052, 0.41963, -1.43018, -0.684856, 5.31452, 0.482783, -0.349064, 5.48379, -0.69124, 0.824958, 5.48379, 0.315199, -1.69161, -4.58549, 1.32195, -0.498322, 3.23211, 1.21627, -0.043337, 2.94765, -1.36348, 0.657375, 5.31452, -0.69124, -0.85244, 5.14839, -0.187864, 0.992854, 4.81194, -0.187864, 1.15855, 0.132115, -1.37823, -1.06397, 3.03914, -1.19308, -1.54188, -0.168358, 1.32249, -1.45032, -4.77587, 1.23877, -1.07361, 3.07242, 1.14481, 0.824958, 5.14839, 0.482783, -0.181793, 5.31452, 0.650679, -0.684856, 5.48379, -0.523656, 0.998498, -2.99006, -1.36815, 0.104108, 2.94189, 1.1523, 0.824958, 5.31452, -0.523656, -0.85244, 5.14839, 0.147303, -0.684856, 5.48379, 0.315199, 0.489479, 5.48379, -0.69124, -1.38056, -2.99006, -1.36815)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_all1o"]
+albedo_texture = ExtResource("6_677d5")
+emission_enabled = true
+emission = Color(0.00639966, 0.169903, 0.330814, 1)
+emission_energy_multiplier = 0.03
+
+[sub_resource type="QuadMesh" id="QuadMesh_dvijx"]
+material = SubResource("StandardMaterial3D_all1o")
 
 [node name="Node3D" type="Node3D"]
 
@@ -77,41 +95,57 @@ shape = SubResource("ConvexPolygonShape3D_ri5as")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.38819, 12.7864, 0)
 light_color = Color(1, 0.643137, 0.101961, 1)
 light_energy = 1.359
+light_size = 0.021
+omni_range = 7.0
 
 [node name="luz corridor8" type="OmniLight3D" parent="CORREDOR__ANDRE"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -138.638, 12.7864, 32.4445)
 light_color = Color(1, 0.643137, 0.101961, 1)
 light_energy = 1.359
+light_size = 0.021
+omni_range = 7.0
 
 [node name="luz corridor7" type="OmniLight3D" parent="CORREDOR__ANDRE"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -138.813, 12.7864, 0)
 light_color = Color(1, 0.643137, 0.101961, 1)
 light_energy = 1.359
+light_size = 0.021
+omni_range = 7.0
 
 [node name="luz corridor6" type="OmniLight3D" parent="CORREDOR__ANDRE"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -103.462, 12.7864, 0)
 light_color = Color(1, 0.643137, 0.101961, 1)
 light_energy = 1.359
+light_size = 0.021
+omni_range = 7.0
 
 [node name="luz corridor5" type="OmniLight3D" parent="CORREDOR__ANDRE"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -67.8386, 12.7864, 0)
 light_color = Color(1, 0.643137, 0.101961, 1)
 light_energy = 1.359
+light_size = 0.021
+omni_range = 7.0
 
 [node name="luz corridor4" type="OmniLight3D" parent="CORREDOR__ANDRE"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -32.2429, 12.7864, 0)
 light_color = Color(1, 0.643137, 0.101961, 1)
 light_energy = 1.5
+light_size = 0.021
+omni_range = 7.0
 
 [node name="luz corridor3" type="OmniLight3D" parent="CORREDOR__ANDRE"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 74.1768, 12.7864, 0)
 light_color = Color(1, 0.643137, 0.101961, 1)
 light_energy = 1.359
+light_size = 0.021
+omni_range = 7.0
 
 [node name="luz corridor2" type="OmniLight3D" parent="CORREDOR__ANDRE"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 38.8105, 12.5628, 0.0178408)
 light_color = Color(1, 0.643137, 0.101961, 1)
 light_energy = 1.359
+light_size = 0.021
+omni_range = 7.0
 
 [node name="TriggerEstatua" type="Area3D" parent="CORREDOR__ANDRE"]
 transform = Transform3D(1.17518, 0, 0.0551526, 0, 1.17647, 0, -0.0551526, 0, 1.17518, -11.6342, -9.89489, 16.6293)
@@ -170,5 +204,51 @@ mesh = ExtResource("4_lcglg")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Estatua6/StaticBody3D"]
 shape = SubResource("ConvexPolygonShape3D_tqqp1")
 
+[node name="grupovelas" parent="." instance=ExtResource("5_gaadx")]
+transform = Transform3D(0.978846, 0, 0.204599, 0, 1, 0, -0.204599, 0, 0.978846, -23.4778, -2.2933, 12.0125)
+
+[node name="grupovelas2" parent="." instance=ExtResource("5_gaadx")]
+transform = Transform3D(1.06271, 0, -0.222012, 0, 1.08566, 0, 0.222012, 0, 1.06271, -25.1394, -2.27823, 11.848)
+
+[node name="vela particulada2" parent="grupovelas2" index="1"]
+transform = Transform3D(0.0455363, 0, 0.0776302, 0, 0.109735, 0, -0.0776302, 0, 0.0455363, 0.790253, 0.214366, -0.0779972)
+
+[node name="ceulafora" type="MeshInstance3D" parent="."]
+transform = Transform3D(30.1166, 0, 0, 0, 14.8815, 0, 0, 0, 1, -6.97977, 0, -3.33205)
+mesh = SubResource("QuadMesh_dvijx")
+
+[node name="ceulafora3" type="MeshInstance3D" parent="."]
+transform = Transform3D(-2.39227e-06, 0, -1, 0, 28.9904, 0, 54.7288, 0, -4.37114e-08, 20.0558, 0, 4.07269)
+mesh = SubResource("QuadMesh_dvijx")
+
+[node name="ceulafora2" type="MeshInstance3D" parent="."]
+transform = Transform3D(-30.1166, 0, -8.74228e-08, 0, 14.8815, 0, 2.63288e-06, 0, -1, -6.98, 0, 10.851)
+mesh = SubResource("QuadMesh_dvijx")
+
+[node name="lvl3somluzbckrg" parent="." instance=ExtResource("7_hpxx0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.34151, 4.14026)
+
+[node name="lvl3somluzbckrg2" parent="." instance=ExtResource("7_hpxx0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.84424, 1.34151, 4.14026)
+
+[node name="lvl3somluzbckrg3" parent="." instance=ExtResource("7_hpxx0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.7799, 1.34151, 4.14026)
+
+[node name="lvl3somluzbckrg4" parent="." instance=ExtResource("7_hpxx0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -17.9788, 1.34151, 4.14026)
+
+[node name="SpotLight3D" type="SpotLight3D" parent="."]
+transform = Transform3D(0.0109954, -0.391976, 0.91991, -1.0041e-08, 0.919965, 0.392, -0.99994, -0.00431019, 0.0101153, 18.4535, 2.234, 4.4054)
+light_color = Color(0.273864, 0.628405, 0.64088, 1)
+spot_range = 14.5397
+spot_angle = 17.73
+
+[node name="OmniLight3D" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 19.5967, 2.42483, 4.60852)
+light_color = Color(0.27451, 0.627451, 0.639216, 1)
+light_energy = 4.959
+
 [editable path="CharacterBody3D"]
 [editable path="CORREDOR__ANDRE"]
+[editable path="grupovelas"]
+[editable path="grupovelas2"]

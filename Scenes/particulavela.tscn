@@ -1,0 +1,56 @@
+[gd_scene load_steps=8 format=3 uid="uid://bld1sd12aqiiq"]
+
+[ext_resource type="Texture2D" uid="uid://dtepd3py661g8" path="res://Blender/André/texturas/fogovela.png" id="1_srvjb"]
+[ext_resource type="PackedScene" uid="uid://0dg6ye6ytg5j" path="res://Blender/André/objs/modelos/vela.blend" id="2_we27j"]
+
+[sub_resource type="Curve" id="Curve_2dv3o"]
+_data = [Vector2(0, 0.868132), 0.0, 0.0, 0, 0, Vector2(1, 0.142857), -2.63736, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_24su3"]
+curve = SubResource("Curve_2dv3o")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_h6628"]
+emission_shape = 1
+emission_sphere_radius = 0.04
+spread = 6.667
+gravity = Vector3(0, 0.66, 0)
+damping_max = 17.544
+scale_curve = SubResource("CurveTexture_24su3")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_xskre"]
+transparency = 2
+alpha_scissor_threshold = 0.5
+alpha_antialiasing_mode = 0
+albedo_texture = ExtResource("1_srvjb")
+emission_enabled = true
+emission = Color(0.42182, 0.194128, 0, 1)
+emission_energy_multiplier = 13.91
+billboard_mode = 1
+billboard_keep_scale = true
+
+[sub_resource type="QuadMesh" id="QuadMesh_tjomb"]
+material = SubResource("StandardMaterial3D_xskre")
+size = Vector2(0.1, 0.1)
+
+[node name="vela particulada" type="Node3D"]
+transform = Transform3D(0.34225, 0, 0, 0, 0.34225, 0, 0, 0, 0.34225, 0, 0, 0)
+
+[node name="vela" parent="." instance=ExtResource("2_we27j")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00115633, 0, -0.0872036)
+
+[node name="GPUParticles3D" type="GPUParticles3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.74986, -0.0694879)
+amount = 3
+lifetime = 1.09
+randomness = 1.0
+process_material = SubResource("ParticleProcessMaterial_h6628")
+draw_pass_1 = SubResource("QuadMesh_tjomb")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="."]
+transform = Transform3D(2.92184, 0, 0, 0, 2.92184, 0, 0, 0, 2.92184, 0, 1.8862, -0.0551443)
+light_color = Color(1, 0.415686, 0.101961, 1)
+light_energy = 0.34
+light_indirect_energy = 16.0
+omni_range = 0.71
+omni_attenuation = 1.883

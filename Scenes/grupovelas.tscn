@@ -1,0 +1,23 @@
+[gd_scene load_steps=2 format=3 uid="uid://37xg0r2btkyp"]
+
+[ext_resource type="PackedScene" uid="uid://bld1sd12aqiiq" path="res://Scenes/particulavela.tscn" id="1_563nb"]
+
+[node name="grupovelas" type="Node3D"]
+
+[node name="vela particulada" parent="." instance=ExtResource("1_563nb")]
+transform = Transform3D(0.138557, 0, 0.0799959, 0, 0.134077, 0, -0.0799959, 0, 0.138557, 0.615467, 0.288453, 0.202235)
+
+[node name="vela particulada2" parent="." instance=ExtResource("1_563nb")]
+transform = Transform3D(0.0455363, 0, 0.0776302, 0, 0.122, 0, -0.0776302, 0, 0.0455363, 0.790253, 0.264299, -0.0779972)
+
+[node name="vela particulada6" parent="." instance=ExtResource("1_563nb")]
+transform = Transform3D(0.0611085, 0, 0.104178, 0, 0.0932904, 0, -0.104178, 0, 0.0611085, 0.374144, 0.216828, -0.0607891)
+
+[node name="vela particulada7" parent="." instance=ExtResource("1_563nb")]
+transform = Transform3D(0.0666612, 0, 0.113644, 0, 0.110411, 0, -0.113644, 0, 0.0666612, 0.244398, 0.253165, 0.221519)
+
+[node name="vela particulada11" parent="." instance=ExtResource("1_563nb")]
+transform = Transform3D(0.0313096, 0, 0.0533766, 0, 0.0518583, 0, -0.0533766, 0, 0.0313096, 0.600193, 0.148804, -0.0908623)
+
+[node name="vela particulada12" parent="." instance=ExtResource("1_563nb")]
+transform = Transform3D(0.0463658, 0, 0.0790444, 0, 0.0517963, 0, -0.0790444, 0, 0.0463658, 0.102551, 0.153246, -0.040535)
