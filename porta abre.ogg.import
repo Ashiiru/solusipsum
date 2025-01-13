@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://cs54icwdl5xr4"
+path="res://.godot/imported/porta abre.ogg-69c2d21b9be72eb40659cb9911bd01bb.oggvorbisstr"
+
+[deps]
+
+source_file="res://porta abre.ogg"
+dest_files=["res://.godot/imported/porta abre.ogg-69c2d21b9be72eb40659cb9911bd01bb.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://4ap3x13jjt4e"]
+
+[node name="teste" type="Node2D"]
+
+[node name="Label" type="Label" parent="."]
+offset_left = 326.0
+offset_top = 321.0
+offset_right = 820.0
+offset_bottom = 344.0
+text = "SUBSTITUIR CONTEÚDO DENTRO DE \"PRELOAD\" PARA UM NÍVEL"
+
+[node name="Label2" type="Label" parent="."]
+offset_left = 494.0
+offset_top = 244.0
+offset_right = 988.0
+offset_bottom = 267.0
+text = "NÍVEL DE TESTE"

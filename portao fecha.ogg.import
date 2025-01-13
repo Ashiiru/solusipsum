@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://cgxwuc4kch30r"
+path="res://.godot/imported/portao fecha.ogg-4a9f00b622f5f2ffef6c0355382f5f0f.oggvorbisstr"
+
+[deps]
+
+source_file="res://portao fecha.ogg"
+dest_files=["res://.godot/imported/portao fecha.ogg-4a9f00b622f5f2ffef6c0355382f5f0f.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
