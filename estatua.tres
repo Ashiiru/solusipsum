@@ -1,4 +1,4 @@
-[gd_resource type="ArrayMesh" load_steps=6 format=4 uid="uid://c5yo4vk0kf0fe"]
+[gd_resource type="ArrayMesh" load_steps=6 format=4 uid="uid://ck2c7k5fyl7bw"]
 
 [ext_resource type="Texture2D" uid="uid://crtjr0kjsjm4r" path="res://Blender/André/texturas/texturaestatua2.png" id="1_s8ikw"]
 [ext_resource type="Texture2D" uid="uid://du6wwa22kohwd" path="res://Blender/André/texturas/mesamadeira.png" id="2_aun72"]
