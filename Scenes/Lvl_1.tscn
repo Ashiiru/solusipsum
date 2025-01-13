@@ -365,7 +365,7 @@ spot_attenuation = 0.55
 spot_angle = 5.33
 
 [node name="Sol" type="OmniLight3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -31.6526, 8.53722, 4.32723)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -31.6528, 8.53986, 4.3268)
 light_color = Color(1, 0.831373, 0.705882, 1)
 light_energy = 9.304
 omni_range = 4.721

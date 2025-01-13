@@ -99,7 +99,7 @@ light_size = 0.021
 omni_range = 7.0
 
 [node name="luz corridor8" type="OmniLight3D" parent="CORREDOR__ANDRE"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -138.638, 12.7864, 32.4445)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -138.638, 12.7864, 32.8282)
 light_color = Color(1, 0.643137, 0.101961, 1)
 light_energy = 1.359
 light_size = 0.021
@@ -134,7 +134,7 @@ light_size = 0.021
 omni_range = 7.0
 
 [node name="luz corridor3" type="OmniLight3D" parent="CORREDOR__ANDRE"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 74.1768, 12.7864, 0)
+transform = Transform3D(5.88235, 0, 0, 0, 5.88235, 0, 0, 0, 5.88235, 74.2281, 12.659, -0.0593452)
 light_color = Color(1, 0.643137, 0.101961, 1)
 light_energy = 1.359
 light_size = 0.021
@@ -227,26 +227,79 @@ mesh = SubResource("QuadMesh_dvijx")
 
 [node name="lvl3somluzbckrg" parent="." instance=ExtResource("7_hpxx0")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.34151, 4.14026)
+volume_db = -15.371
+
+[node name="lvl3somluzbckrg6" parent="." instance=ExtResource("7_hpxx0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -23.9296, 1.32681, 9.68737)
+volume_db = -15.371
+
+[node name="lvl3somluzbckrg5" parent="." instance=ExtResource("7_hpxx0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -23.8742, 1.33421, 4.1814)
+volume_db = -15.371
 
 [node name="lvl3somluzbckrg2" parent="." instance=ExtResource("7_hpxx0")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.84424, 1.34151, 4.14026)
+volume_db = -15.371
 
 [node name="lvl3somluzbckrg3" parent="." instance=ExtResource("7_hpxx0")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.7799, 1.34151, 4.14026)
+volume_db = -15.371
 
 [node name="lvl3somluzbckrg4" parent="." instance=ExtResource("7_hpxx0")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -17.9788, 1.34151, 4.14026)
+volume_db = -15.371
 
-[node name="SpotLight3D" type="SpotLight3D" parent="."]
-transform = Transform3D(0.0109954, -0.391976, 0.91991, -1.0041e-08, 0.919965, 0.392, -0.99994, -0.00431019, 0.0101153, 18.4535, 2.234, 4.4054)
-light_color = Color(0.273864, 0.628405, 0.64088, 1)
-spot_range = 14.5397
-spot_angle = 17.73
+[node name="janela trás luz" type="SpotLight3D" parent="."]
+transform = Transform3D(0.0111865, -0.486088, 0.873838, 0.0210661, 0.873813, 0.485805, -0.999716, 0.0129739, 0.0200148, 17.2054, 1.55716, 4.35705)
+light_color = Color(0.673757, 0.928531, 0.936287, 1)
+light_energy = 13.345
+light_indirect_energy = 1.358
+light_specular = 0.787
+shadow_enabled = true
+shadow_blur = 5.336
+spot_range = 13.816
+spot_attenuation = 0.82
+spot_angle = 9.05
+spot_angle_attenuation = 0.965945
 
-[node name="OmniLight3D" type="OmniLight3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 19.5967, 2.42483, 4.60852)
-light_color = Color(0.27451, 0.627451, 0.639216, 1)
-light_energy = 4.959
+[node name="janelas lado luz" type="SpotLight3D" parent="."]
+transform = Transform3D(0.998529, 0.0527843, 0.0123666, -0.0524485, 0.882815, 0.466784, 0.0137216, -0.466746, 0.884285, -2.33341, 0.326363, 11.1268)
+light_color = Color(0.673757, 0.928531, 0.936287, 1)
+light_energy = 13.345
+light_indirect_energy = 1.358
+light_specular = 0.787
+shadow_enabled = true
+shadow_blur = 5.336
+spot_range = 13.816
+spot_attenuation = 0.82
+spot_angle = 9.05
+spot_angle_attenuation = 0.965945
+
+[node name="janelas lado luz3" type="SpotLight3D" parent="."]
+transform = Transform3D(0.998529, 0.0527843, 0.0123666, -0.0524485, 0.882815, 0.466784, 0.0137216, -0.466746, 0.884285, -12.9984, 0.394425, 11.24)
+light_color = Color(0.673757, 0.928531, 0.936287, 1)
+light_energy = 13.345
+light_indirect_energy = 1.358
+light_specular = 0.787
+shadow_enabled = true
+shadow_blur = 5.336
+spot_range = 13.816
+spot_attenuation = 0.82
+spot_angle = 9.05
+spot_angle_attenuation = 0.965945
+
+[node name="janelas lado luz2" type="SpotLight3D" parent="."]
+transform = Transform3D(0.998529, 0.0527843, 0.0123666, -0.0524485, 0.882815, 0.466784, 0.0137216, -0.466746, 0.884285, -7.59917, 0.602951, 11.0544)
+light_color = Color(0.673757, 0.928531, 0.936287, 1)
+light_energy = 13.345
+light_indirect_energy = 1.358
+light_specular = 0.787
+shadow_enabled = true
+shadow_blur = 5.336
+spot_range = 13.816
+spot_attenuation = 0.82
+spot_angle = 9.05
+spot_angle_attenuation = 0.965945
 
 [editable path="CharacterBody3D"]
 [editable path="CORREDOR__ANDRE"]
