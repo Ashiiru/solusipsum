@@ -62,7 +62,6 @@ func _physics_process(delta: float) -> void:
 		if angle_to_statue < FOV_ANGLE:  # ✅ If statue is in the cone
 			statue.freeze_statue()
 			statue_detected = true
-			print("✅ Statue in FOV, Freezing")
 		else:
 			statue.unfreeze_statue()
 

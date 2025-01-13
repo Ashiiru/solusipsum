@@ -1,8 +1,9 @@
-[gd_scene load_steps=22 format=3 uid="uid://wywm6xdl3ax8"]
+[gd_scene load_steps=23 format=3 uid="uid://wywm6xdl3ax8"]
 
 [ext_resource type="PackedScene" uid="uid://cct3ijl60412x" path="res://Scenes/Player.tscn" id="1_5et72"]
 [ext_resource type="PackedScene" uid="uid://bnythxymj8ikl" path="res://Blender/André/corredor/CORREDOR__ANDRE.blend" id="2_2kyho"]
 [ext_resource type="PackedScene" uid="uid://du5wyhgwo32g3" path="res://Scenes/Statue.tscn" id="3_hqy7q"]
+[ext_resource type="AudioStream" uid="uid://dwpgcsaicyauc" path="res://estatuamexer.ogg" id="4_418n0"]
 [ext_resource type="ArrayMesh" uid="uid://c5yo4vk0kf0fe" path="res://estatua.tres" id="4_lcglg"]
 [ext_resource type="PackedScene" uid="uid://37xg0r2btkyp" path="res://Scenes/grupovelas.tscn" id="5_gaadx"]
 [ext_resource type="Texture2D" uid="uid://2enhss48kinn" path="res://Blender/André/texturas/photo-1691989949393-7cc2a4a1c518.jpg" id="6_677d5"]
@@ -158,12 +159,17 @@ omni_range = 7.0
 transform = Transform3D(1.17518, 0, 0.0551526, 0, 1.17647, 0, -0.0551526, 0, 1.17518, -11.6342, -9.89489, 16.6293)
 
 [node name="CollisionTriggerEstatua" type="CollisionShape3D" parent="CORREDOR__ANDRE/TriggerEstatua"]
-transform = Transform3D(1, 0, -4.35859e-07, 0, 1, 0, 4.35859e-07, 0, 1, -13.3111, 0, -12.5482)
+transform = Transform3D(1, 0, -4.32134e-07, 0, 1, 0, 4.32134e-07, 0, 1, -38.6275, 0, -13.7363)
 shape = SubResource("BoxShape3D_8dmvf")
 
-[node name="Statue" parent="." node_paths=PackedStringArray("detection_area") instance=ExtResource("3_hqy7q")]
+[node name="Statue" parent="." node_paths=PackedStringArray("movement_sound", "detection_area") instance=ExtResource("3_hqy7q")]
 transform = Transform3D(0.19978, 0, 0.00937595, 0, 0.2, 0, -0.00937595, 0, 0.19978, -2.38115, -2.31609, 6.71194)
+movement_sound = NodePath("AudioStreamPlayer3D")
 detection_area = NodePath("../CORREDOR__ANDRE/TriggerEstatua")
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="Statue"]
+stream = ExtResource("4_418n0")
+volume_db = -14.359
 
 [node name="Estatua" type="MeshInstance3D" parent="."]
 transform = Transform3D(-8.74228e-09, 0, -0.2, 0, 0.2, 0, 0.2, 0, -8.74228e-09, -2.40464, -2.32482, 1.87005)

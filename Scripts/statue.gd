@@ -2,10 +2,11 @@ extends CharacterBody3D
 
 const SPEED = 3.0
 const MAX_SPEED = 3.0  
-
+@export var movement_sound: AudioStreamPlayer3D
 @export var detection_area: Area3D  # Assign the Area3D in the Inspector
 var can_move = false  # Statue won't move until the player enters the area
 var has_been_activated = false  # Prevents re-activation before the player enters the area once
+var was_moving = false
 
 func _ready():
 	# ✅ Connect the signal for entering the Area3D (Only Entry)
@@ -37,8 +38,14 @@ func _physics_process(delta):
 			velocity = Vector3.ZERO
 		else:
 			velocity = direction * SPEED
-
-		move_and_slide()
+			
+			# Play sound every time the statue resumes movement
+		if velocity != Vector3.ZERO and !was_moving:
+			if movement_sound:
+				movement_sound.play()
+	was_moving = velocity != Vector3.ZERO
+		
+	move_and_slide()
 
 # ✅ FIXED: Using Groups to Trigger Activation (No More NodePath Errors!)
 func _on_area_entered(body):
@@ -54,10 +61,10 @@ func freeze_statue():
 	if has_been_activated:
 		can_move = false
 		velocity = Vector3.ZERO
-		print("❄️ Statue Frozen!")
-
+		was_moving = false
+		if movement_sound and movement_sound.is_playing():
+			movement_sound.stop()
 # ✅ Unfreeze Statue (Only When Activated)
 func unfreeze_statue():
 	if has_been_activated:
 		can_move = true
-		print("🏃 Statue Resumed Moving!")
