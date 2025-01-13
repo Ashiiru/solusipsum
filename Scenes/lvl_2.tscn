@@ -1,4 +1,4 @@
-[gd_scene load_steps=80 format=4 uid="uid://cgahhes3omp5v"]
+[gd_scene load_steps=87 format=4 uid="uid://cgahhes3omp5v"]
 
 [ext_resource type="PackedScene" uid="uid://bcpxnpgi6m2j5" path="res://Blender/Rui/CORREDOR_RUI.blend" id="1_d2nc4"]
 [ext_resource type="PackedScene" uid="uid://cct3ijl60412x" path="res://Scenes/Player.tscn" id="2_e0ocd"]
@@ -19,9 +19,11 @@
 [ext_resource type="Script" path="res://Scripts/muffle.gd" id="8_3nnuo"]
 [ext_resource type="AudioStream" uid="uid://bps8ji3upc424" path="res://exit luz.ogg" id="9_m37qp"]
 [ext_resource type="AudioStream" uid="uid://bpn65gsvkbv2o" path="res://escotilha.ogg" id="10_vivl8"]
+[ext_resource type="Texture2D" uid="uid://qwsw0t6h037t" path="res://Blender/Rui/texturaboneco.png" id="13_m8slc"]
 [ext_resource type="AudioStream" uid="uid://b0wqfsge54oi2" path="res://fim corredor.ogg" id="14_0s32q"]
 [ext_resource type="AudioStream" uid="uid://cs54icwdl5xr4" path="res://porta abre.ogg" id="16_4x4g3"]
 [ext_resource type="AudioStream" uid="uid://dblc4aodhller" path="res://porta fecha.ogg" id="17_3r24b"]
+[ext_resource type="AudioStream" uid="uid://b60w6knh5xeme" path="res://rua.ogg" id="23_5q51k"]
 
 [sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_a2ptj"]
 points = PackedVector3Array(-1.39863, -0.168326, 1.23984, 1.375, 0.93283, 1.99533, 1.375, 0.93283, 0.0230586, 1.375, -1.03944, 1.99533, -0.620157, -1.0625, 0, -0.60177, 0.9375, 0.0183887, 1.375, -1.03944, 0.0230586, -0.60177, 0.9375, 2, 2.23433, -0.0533056, 1.58572, -0.60177, -1.04411, 2, -1.45643, -0.0533056, 1.9318, 2.23433, -0.226039, 1.9318, 2.17653, -0.168326, 1.29715, -1.45643, -0.226039, 1.9318, -1.39863, -0.0533056, 1.23984, 2.23433, -0.0533056, 1.9318, -1.45643, -0.226039, 1.58572, 2.23433, -0.226039, 1.58572, -1.45643, -0.0533056, 1.58572, 2.17653, -0.0533056, 1.29715)
@@ -283,6 +285,44 @@ emission_texture = SubResource("ViewportTexture_c6d4h")
 [sub_resource type="VideoStreamTheora" id="VideoStreamTheora_4ig3b"]
 file = "res://static.ogg"
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_5qj6b"]
+resource_name = "m boneco"
+cull_mode = 2
+albedo_texture = ExtResource("13_m8slc")
+roughness = 0.5
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_b3hln"]
+_surfaces = [{
+"aabb": AABB(-0.739506, -0.666666, -0.739504, 1.47901, 2, 1.47901),
+"format": 34896613377,
+"index_count": 84,
+"index_data": PackedByteArray("DAADAA0ADAAIAAMACAAHAAMACAAKAAcADgAFAA8ADgALAAUACwABAAUACwAJAAEADwABAA0ADwAFAAEAEAAJAAAAEAAMAAkABgAIAAIABgAKAAgAEQAKAAYAEQAOAAoAAAALAAQAAAAJAAsABAAOABEABAALAA4AAgAMABAAAgAIAAwABwANAAMABwAPAA0ACgAPAAcACgAOAA8ACQANAAEACQAMAA0A"),
+"name": "m boneco",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 18,
+"vertex_data": PackedByteArray("EkgAABJIAAAAAP//AAAAAOy3AAASSAAA/v///wAAAAASSAAA7LcAAAAA/////wAA7LcAAOy3AAD//////v8AAGjXAACWKAAAligAAJYoAABo1wAAaNcAAJYoAABo1wAA/38AAJYoAAD/f///AAAAAP9/AABo1wAA/3////7/AAD/fwAAEkgAAP9/AADstwAA")
+}]
+blend_shape_mode = 0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_xwfnk"]
+resource_name = "CORREDOR_RUI_Cube_004"
+_surfaces = [{
+"aabb": AABB(-0.739506, -0.666666, -0.739504, 1.47901, 2, 1.47901),
+"attribute_data": PackedByteArray("yqNKNUcMDFdhHwxXJJmhN8qj+iyADMBMZzIMV4AMwEx7m0o1Jx8wVWcyJz0shqE3e5v6LGEf5UphHyc9YR/lSmMvJz0hpqMqRwyaOGUiJz0hpqE3Y5eLI2UiiiMkmaMqKxlVN2MviiMkmaE3b4qLI+QoJz0hpiIxYwzmUeQoDFfkKIojJJkiMUQfClDkKCc9yqMiMXubIjE="),
+"format": 34896613399,
+"index_count": 84,
+"index_data": PackedByteArray("HAAGAB8AHAAQAAYAEgAPAAcAEgAYAA8AIAAKACMAIAAZAAoAGwADAAsAGwAVAAMAIgABAB4AIgAJAAEAJAAUAAAAJAAdABQADAARAAQADAAXABEAJQAXAAwAJQAhABcAAAAaAAgAAAAUABoACAAhACUACAAaACEABAAdACQABAARAB0ADQAeAAUADQAiAB4AFgAjAA4AFgAgACMAEwAfAAIAEwAcAB8A"),
+"material": SubResource("StandardMaterial3D_5qj6b"),
+"name": "m boneco",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 38,
+"vertex_data": PackedByteArray("EkgAABJIVNUAAP//AACm2QAA//8AAD77AAD//wAAovzstwAAEkhU1f7///8AAKbZ/v///wAAPvv+////AAD++BJIAADst1TVAAD/////ptkAAP///////wAA/////6L87LcAAOy3VNX//////v+m2f/////+//////////7//vho1wAAlig++2jXAACWKFTVaNcAAJYo/viWKAAAlig++5YoAACWKFTVligAAJYoovxo1wAAaNf//2jXAABo11TVaNcAAGjX/viWKAAAaNf//5YoAABo11TVligAAGjXovz/fwAAlig++/9/AACWKFTV/3///wAAptn/f///AAA++/9/AABo1////38AAGjXVNX/f////v+m2f9////+/////38AABJIVNX/fwAA7LdU1VRVVFW3pSOtAAD/f9BBXXxUVVRVt6UjrQAA/39SABNAVFVUVbelI63/f+940EFdfFRVVFW3pSOt/3/veFIAE0AAAP9/VFVUVVIAE0AAAP9/VFVUVdBBXXz/f+94VFVUVVIAE0D/f+94VFVUVdBBXXwAAP9/VFVUVbelI60AAP9//3/veFRVVFW3pSOt/3/veFRVVFVUVVRV")
+}]
+blend_shape_mode = 0
+shadow_mesh = SubResource("ArrayMesh_b3hln")
+
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2frf8"]
 resource_name = "Material.012"
 cull_mode = 2
@@ -426,6 +466,11 @@ emission_texture = SubResource("ViewportTexture_d7led")
 
 [sub_resource type="VideoStreamTheora" id="VideoStreamTheora_a7kk8"]
 file = "res://paisagem.ogg"
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_rxcp6"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_67xcu"]
+albedo_color = Color(0.188235, 0.0823529, 0.396078, 1)
 
 [node name="Lvl_2" type="Node3D"]
 
@@ -646,7 +691,7 @@ max_distance = 6.0
 transform = Transform3D(0.00510518, 0.648967, 0.00185148, 0.00407676, -0.00659972, 0.187893, 0.257297, -0.012772, -0.00301382, 96.3157, -10.7252, -69.0784)
 
 [node name="ESCOTILA ESQ" parent="CORREDOR_RUI/roda esq" index="0"]
-transform = Transform3D(0.0272435, 1.28662, 37.0666, 28.7115, -3.79184, 0.0145761, 1.80646, 60.2473, -0.790665, -0.55368, 0.257095, -0.381313)
+transform = Transform3D(0.0272435, 1.28662, 37.0666, 28.7115, -3.79184, 0.0145761, 1.80646, 60.2473, -0.790664, -0.55368, 0.257095, -0.381313)
 rotation_edit_mode = 1
 
 [node name="StaticBody3D" type="StaticBody3D" parent="CORREDOR_RUI/roda esq/ESCOTILA ESQ" index="0"]
@@ -725,6 +770,30 @@ emission_angle_filter_attenuation_db = -7.3
 transform = Transform3D(2.13508, 0, 5.96046e-08, 0, 2.67967, 0, 0, 0, 2.41162, -0.013485, 0.0356772, -1.45407)
 light_color = Color(0.589096, 0.589096, 0.589096, 1)
 light_energy = 1.359
+
+[node name="predio" parent="CORREDOR_RUI" index="32"]
+transform = Transform3D(2.82352e-06, 47.3708, 0, -47.3708, 2.82352e-06, 0, 0, 0, 47.3708, -122.315, 40.6324, -37.0349)
+
+[node name="SpotLight3D" type="SpotLight3D" parent="CORREDOR_RUI/predio" index="0"]
+transform = Transform3D(0.063008, 2.77883e-09, 0.0562151, -0.0352735, -0.0657483, 0.0395359, 0.0437712, -0.052984, -0.0490604, 0.607174, 0.278999, -0.0600478)
+light_color = Color(1, 0.776471, 0.317647, 1)
+light_energy = 16.0
+spot_range = 24.835
+
+[node name="boneco2" type="MeshInstance3D" parent="CORREDOR_RUI"]
+transform = Transform3D(-0.876442, -0.000296661, -0.481508, -0.000190243, 1, -0.000269784, 0.481508, -0.000144858, -0.876442, 115.655, -0.493405, -83.0142)
+mesh = ExtResource("2_y6kq0")
+skeleton = NodePath("")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="CORREDOR_RUI/boneco2"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CORREDOR_RUI/boneco2/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_58ocf")
+
+[node name="bixo2" type="MeshInstance3D" parent="CORREDOR_RUI"]
+transform = Transform3D(0.300545, 0, -0.819262, 0, 0.614432, 0, 0.429398, 0, 0.573419, 115.91, 4.12078, -82.8221)
+mesh = SubResource("ArrayMesh_xwfnk")
+skeleton = NodePath("")
 
 [node name="Ecra5" type="MeshInstance3D" parent="CORREDOR_RUI"]
 transform = Transform3D(0.616257, 0, -1.37124, 0, 0.784483, 0, 0.905571, 0, 0.933153, -58.7814, -1.0433, -17.6402)
@@ -946,6 +1015,21 @@ layout_mode = 2
 stream = SubResource("VideoStreamTheora_a7kk8")
 autoplay = true
 loop = true
+
+[node name="ceu" type="MeshInstance3D" parent="CORREDOR_RUI"]
+transform = Transform3D(-895.773, 1.70442e-07, 0, -7.8311e-05, -1.94963, 0, 0, 0, 244.185, -106.135, 96.1489, -37.8357)
+mesh = SubResource("PlaneMesh_rxcp6")
+surface_material_override/0 = SubResource("StandardMaterial3D_67xcu")
+
+[node name="rua" type="AudioStreamPlayer3D" parent="CORREDOR_RUI"]
+transform = Transform3D(-0.110493, 2.73298, -2.91867, 0.0851588, 2.92073, 2.73168, 3.99757, 0.0133201, -0.138864, -70.4955, 12.0005, -60.0504)
+stream = ExtResource("23_5q51k")
+volume_db = -6.288
+unit_size = 15.67
+autoplay = true
+max_distance = 6.0
+emission_angle_enabled = true
+emission_angle_degrees = 30.5
 
 [node name="CharacterBody3D" parent="." groups=["Player"] instance=ExtResource("2_e0ocd")]
 transform = Transform3D(-0.0141586, 0.00156694, 0.999899, 0.000791461, 0.999998, -0.00155589, -0.9999, 0.000769365, -0.0141599, -16.2055, -1.75315, -15.0999)
