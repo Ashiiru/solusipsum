@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cjn6jkqcjj18k"
-path.s3tc="res://.godot/imported/parede.png-d6b1b1f6d9dfcd4780664a42438ffb9d.s3tc.ctex"
+uid="uid://bnwhxq835jl5w"
+path.s3tc="res://.godot/imported/horse.png-3c1ae848bb4637e99632db9edee2ad77.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://Blender/André/texturas/parede.png"
-dest_files=["res://.godot/imported/parede.png-d6b1b1f6d9dfcd4780664a42438ffb9d.s3tc.ctex"]
+source_file="res://Blender/André/texturas/horse.png"
+dest_files=["res://.godot/imported/horse.png-3c1ae848bb4637e99632db9edee2ad77.s3tc.ctex"]
 
 [params]
 

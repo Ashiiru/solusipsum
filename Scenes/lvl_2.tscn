@@ -439,7 +439,7 @@ size = Vector3(14.5713, 18.1724, 40.8743)
 size = Vector3(18.5988, 10.6021, 17.7484)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_slr83"]
-size = Vector3(66.518, 10.311, 38.9784)
+size = Vector3(66.518, 10.311, 28.5556)
 
 [sub_resource type="BoxMesh" id="BoxMesh_j5fhr"]
 
@@ -969,7 +969,7 @@ script = ExtResource("8_3nnuo")
 luz_corredor_som = NodePath("../../luz corredor/luz corredor som")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Spatial/CORREDOR_RUI/Triggers/Muffle"]
-transform = Transform3D(0.999226, 0, -0.0393296, 0, 1, 0, 0.0393296, 0, 0.999226, 9.14439, 0.577538, 6.09931)
+transform = Transform3D(0.999226, 0, -0.0393297, 0, 1, 0, 0.0393297, 0, 0.999226, 8.93943, 0.577538, 11.3067)
 shape = SubResource("BoxShape3D_slr83")
 
 [node name="Botao" type="MeshInstance3D" parent="Spatial/CORREDOR_RUI"]

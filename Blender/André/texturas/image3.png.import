@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cjn6jkqcjj18k"
-path.s3tc="res://.godot/imported/parede.png-d6b1b1f6d9dfcd4780664a42438ffb9d.s3tc.ctex"
+uid="uid://dy01j2s63s1t6"
+path.s3tc="res://.godot/imported/image3.png-4845bf06695a039184df28411ac2215f.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://Blender/André/texturas/parede.png"
-dest_files=["res://.godot/imported/parede.png-d6b1b1f6d9dfcd4780664a42438ffb9d.s3tc.ctex"]
+source_file="res://Blender/André/texturas/image3.png"
+dest_files=["res://.godot/imported/image3.png-4845bf06695a039184df28411ac2215f.s3tc.ctex"]
 
 [params]
 

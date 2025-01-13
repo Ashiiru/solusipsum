@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cjn6jkqcjj18k"
-path.s3tc="res://.godot/imported/parede.png-d6b1b1f6d9dfcd4780664a42438ffb9d.s3tc.ctex"
+uid="uid://b7ie7xa6rytuf"
+path.s3tc="res://.godot/imported/clint.png-82957b30af621eb83d3bd48412eaea8c.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://Blender/André/texturas/parede.png"
-dest_files=["res://.godot/imported/parede.png-d6b1b1f6d9dfcd4780664a42438ffb9d.s3tc.ctex"]
+source_file="res://Blender/André/texturas/clint.png"
+dest_files=["res://.godot/imported/clint.png-82957b30af621eb83d3bd48412eaea8c.s3tc.ctex"]
 
 [params]
 

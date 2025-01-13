@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cjn6jkqcjj18k"
-path.s3tc="res://.godot/imported/parede.png-d6b1b1f6d9dfcd4780664a42438ffb9d.s3tc.ctex"
+uid="uid://csltyykw05d16"
+path.s3tc="res://.godot/imported/bixo_foto.png-ae12586bae2d1875f63cbeea17cd65b5.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://Blender/André/texturas/parede.png"
-dest_files=["res://.godot/imported/parede.png-d6b1b1f6d9dfcd4780664a42438ffb9d.s3tc.ctex"]
+source_file="res://Blender/André/texturas/bixo_foto.png"
+dest_files=["res://.godot/imported/bixo_foto.png-ae12586bae2d1875f63cbeea17cd65b5.s3tc.ctex"]
 
 [params]
 
