@@ -1,12 +1,16 @@
-[gd_scene load_steps=23 format=3 uid="uid://wywm6xdl3ax8"]
+[gd_scene load_steps=27 format=3 uid="uid://wywm6xdl3ax8"]
 
 [ext_resource type="PackedScene" uid="uid://cct3ijl60412x" path="res://Scenes/Player.tscn" id="1_5et72"]
 [ext_resource type="PackedScene" uid="uid://bnythxymj8ikl" path="res://Blender/André/corredor/CORREDOR__ANDRE.blend" id="2_2kyho"]
+[ext_resource type="AudioStream" uid="uid://cx0cfuocvj5wv" path="res://passomadeira1.ogg" id="2_exdm4"]
 [ext_resource type="PackedScene" uid="uid://du5wyhgwo32g3" path="res://Scenes/Statue.tscn" id="3_hqy7q"]
+[ext_resource type="AudioStream" uid="uid://b4nhcvsnubpgt" path="res://passomadeira2.ogg" id="3_v0y1u"]
 [ext_resource type="AudioStream" uid="uid://dwpgcsaicyauc" path="res://estatuamexer.ogg" id="4_418n0"]
 [ext_resource type="ArrayMesh" uid="uid://c5yo4vk0kf0fe" path="res://estatua.tres" id="4_lcglg"]
 [ext_resource type="PackedScene" uid="uid://37xg0r2btkyp" path="res://Scenes/grupovelas.tscn" id="5_gaadx"]
+[ext_resource type="Script" path="res://Scenes/porta_2_001.gd" id="5_l0e4a"]
 [ext_resource type="Texture2D" uid="uid://2enhss48kinn" path="res://Blender/André/texturas/photo-1691989949393-7cc2a4a1c518.jpg" id="6_677d5"]
+[ext_resource type="AudioStream" uid="uid://b3x780m5qov21" path="res://portatrancada.ogg" id="6_vv6hr"]
 [ext_resource type="PackedScene" uid="uid://tsdvj7i73rss" path="res://Scenes/lvl_3_somluzbckrg.tscn" id="7_hpxx0"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_ptuln"]
@@ -73,6 +77,11 @@ environment = SubResource("Environment_ngw0i")
 
 [node name="CharacterBody3D" parent="." groups=["Player"] instance=ExtResource("1_5et72")]
 transform = Transform3D(-0.00994825, 0, 0.999951, 0, 1, 0, -0.999951, 0, -0.00994825, 12.8542, -2.26166, 4.5985)
+footstep_sounds = Array[AudioStream]([ExtResource("2_exdm4"), ExtResource("3_v0y1u")])
+step_interval = 0.4
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="CharacterBody3D"]
+volume_db = -12.308
 
 [node name="CORREDOR__ANDRE" parent="." instance=ExtResource("2_2kyho")]
 transform = Transform3D(0.17, 0, 0, 0, 0.17, 0, 0, 0, 0.17, -0.330123, -0.953423, 4.17181)
@@ -94,10 +103,17 @@ light_energy = 5.124
 spot_range = 2.97159
 spot_angle = 81.8109
 
+[node name="porta2_001" parent="CORREDOR__ANDRE" index="8" node_paths=PackedStringArray("lockedsound")]
+script = ExtResource("5_l0e4a")
+lockedsound = NodePath("../../CharacterBody3D/AudioStreamPlayer3D")
+
 [node name="StaticBody3D" type="StaticBody3D" parent="CORREDOR__ANDRE/porta2_001" index="0"]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="CORREDOR__ANDRE/porta2_001/StaticBody3D"]
 shape = SubResource("ConvexPolygonShape3D_ri5as")
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="CORREDOR__ANDRE/porta2_001" index="1"]
+stream = ExtResource("6_vv6hr")
 
 [node name="luz corridor" type="OmniLight3D" parent="CORREDOR__ANDRE"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.38819, 12.7864, 0)
