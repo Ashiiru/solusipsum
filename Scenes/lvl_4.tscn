@@ -1,7 +1,11 @@
 [gd_scene load_steps=21 format=3 uid="uid://bm80gqfhrpsja"]
 
 [ext_resource type="PackedScene" uid="uid://7h7cngusgdfh" path="res://Blender/Figueiredo/Corredor figueiredo_4.0.blend" id="1_gha8b"]
+<<<<<<< Updated upstream
 [ext_resource type="PackedScene" path="res://Scenes/particulavelaFigueirola.tscn" id="2_0pke0"]
+=======
+[ext_resource type="PackedScene" uid="uid://by2bsxeriwyqx" path="res://Scenes/particulavelaFigueirola.tscn" id="2_0pke0"]
+>>>>>>> Stashed changes
 [ext_resource type="PackedScene" uid="uid://cct3ijl60412x" path="res://Scenes/Player.tscn" id="2_58m8q"]
 [ext_resource type="AudioStream" uid="uid://cx0cfuocvj5wv" path="res://passomadeira1.ogg" id="3_1v6vb"]
 [ext_resource type="AudioStream" uid="uid://b4nhcvsnubpgt" path="res://passomadeira2.ogg" id="4_jvywj"]

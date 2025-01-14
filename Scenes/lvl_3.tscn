@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=3 uid="uid://wywm6xdl3ax8"]
+[gd_scene load_steps=32 format=3 uid="uid://wywm6xdl3ax8"]
 
 [ext_resource type="PackedScene" uid="uid://cct3ijl60412x" path="res://Scenes/Player.tscn" id="1_5et72"]
 [ext_resource type="PackedScene" uid="uid://bnythxymj8ikl" path="res://Blender/André/corredor/CORREDOR__ANDRE.blend" id="2_2kyho"]
@@ -14,6 +14,7 @@
 [ext_resource type="Texture2D" uid="uid://2enhss48kinn" path="res://Blender/André/texturas/photo-1691989949393-7cc2a4a1c518.jpg" id="6_677d5"]
 [ext_resource type="AudioStream" uid="uid://b3x780m5qov21" path="res://portatrancada.ogg" id="6_vv6hr"]
 [ext_resource type="PackedScene" uid="uid://tsdvj7i73rss" path="res://Scenes/lvl_3_somluzbckrg.tscn" id="7_hpxx0"]
+[ext_resource type="Script" path="res://Scenes/triggerSoundPortaTrancada.gd" id="8_1cjdy"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_ptuln"]
 sky_top_color = Color(0, 0, 0, 1)
@@ -44,6 +45,34 @@ points = PackedVector3Array(2.26536, 0.6591, 0.278332, -0.0647597, -3.35066, -5.
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_26df4"]
 size = Vector3(8.38815, 12.5922, 1.14636)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_78srb"]
+size = Vector3(2.36627, 0.283691, 1.58887)
+
+[sub_resource type="GDScript" id="GDScript_t1s71"]
+script/source = "extends Area3D
+
+@export var sound_player: AudioStreamPlayer3D  # Assign your AudioStreamPlayer3D in the Inspector
+var has_played = false  # ✅ New variable to track if sound has already played
+
+func _ready():
+	# ✅ Connect the signal to trigger sound
+	body_entered.connect(_on_area_entered)
+
+func _on_area_entered(body):
+	# ✅ Play sound only once using the has_played check
+	if body.is_in_group(\"Player\") and not has_played:
+		has_played = true  # ✅ Prevents further plays
+		if sound_player:
+			sound_player.play()
+			print(\"🎶 Playing Porta Trancada Sound (Only Once)!\")
+		else:
+			print(\"⚠️ No sound player assigned!\")
+	elif has_played:
+		print(\"✅ Sound has already played. Ignoring further triggers.\")
+	else:
+		print(\"⚠️ Non-player body detected:\", body.name)
+"
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_8dmvf"]
 size = Vector3(10.8052, 1, 26.0964)
@@ -115,7 +144,16 @@ script = ExtResource("5_l0e4a")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.513477, 0.792542, 0.0731802)
 shape = SubResource("BoxShape3D_26df4")
 
-[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="CORREDOR__ANDRE/porta2_001" index="1"]
+[node name="TriggerPortaTrancada" type="Area3D" parent="CORREDOR__ANDRE/porta2_001" index="1" node_paths=PackedStringArray("sound_player")]
+transform = Transform3D(5.88235, 0, 0, 0, 5.88235, 0, 0, 0, 5.88235, 0, 0, 0)
+script = ExtResource("8_1cjdy")
+sound_player = NodePath("../PortaTrancadaStreamPlayer")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CORREDOR__ANDRE/porta2_001/TriggerPortaTrancada"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0531311, -0.631524, 0.782444)
+shape = SubResource("BoxShape3D_78srb")
+
+[node name="PortaTrancadaStreamPlayer" type="AudioStreamPlayer3D" parent="CORREDOR__ANDRE/porta2_001" index="2"]
 transform = Transform3D(5.88235, 0, 0, 0, 5.88235, 0, 0, 0, 5.88235, 0, 0, 0)
 stream = ExtResource("6_vv6hr")
 
@@ -175,8 +213,13 @@ light_energy = 1.359
 light_size = 0.021
 omni_range = 7.0
 
+[node name="SomDoSino" type="AudioStreamPlayer3D" parent="CORREDOR__ANDRE"]
+transform = Transform3D(0.0398384, 0, 5.88222, 0, 5.88235, 0, -5.88222, 0, 0.0398384, -15.7023, -5.84214, 10.2205)
+max_distance = 100.0
+
 [node name="TriggerEstatua" type="Area3D" parent="CORREDOR__ANDRE"]
 transform = Transform3D(1.17518, 0, 0.0551526, 0, 1.17647, 0, -0.0551526, 0, 1.17518, -11.6342, -9.89489, 16.6293)
+script = SubResource("GDScript_t1s71")
 
 [node name="CollisionTriggerEstatua" type="CollisionShape3D" parent="CORREDOR__ANDRE/TriggerEstatua"]
 transform = Transform3D(0.0536436, 0, 0.99856, 0, 1, 0, -0.99856, 0, 0.0536436, -107.436, 0, -5.43948)
