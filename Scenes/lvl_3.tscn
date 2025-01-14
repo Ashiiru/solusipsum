@@ -83,6 +83,7 @@ footstep_sounds = Array[AudioStream]([ExtResource("2_exdm4"), ExtResource("3_v0y
 step_interval = 0.45
 
 [node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="CharacterBody3D"]
+transform = Transform3D(1, 0, -9.31323e-10, 0, 1, 0, 9.31323e-10, 0, 1, 0.0133533, 4.76837e-07, -0.00592709)
 volume_db = -12.308
 
 [node name="CORREDOR__ANDRE" parent="." instance=ExtResource("2_2kyho")]
