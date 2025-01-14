@@ -8,7 +8,7 @@ const FOV_ANGLE = 45.0  # ✅ The Field of View angle (Adjust for a wider or nar
 
 @export var footstep_sounds: Array[AudioStream]
 @export var step_interval := 0.5 # Seconds between steps
-
+@onready var ray_cast_3d: RayCast3D = $Head/Camera3D/RayCast3D
 @onready var head = $Head
 @onready var camera = $Head/Camera3D
 @onready var audio_player := $AudioStreamPlayer3D
@@ -86,7 +86,12 @@ func _physics_process(delta: float) -> void:
 			step_timer = step_interval
 	else:
 		step_timer = step_interval  # Reset timer if not moving
-	
+	# ✅ Raycast Interaction Logic
+	if Input.is_action_just_pressed("Interact"):  # Replace "interact" with your input action name
+		if ray_cast_3d.is_colliding():
+			var collider = ray_cast_3d.get_collider()
+			if collider and collider.has_method("play_sound"):
+				collider.play_sound()
 
 func play_footstep():
 	if footstep_sounds.size() > 1:

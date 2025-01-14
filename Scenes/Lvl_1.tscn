@@ -1,4 +1,4 @@
-[gd_scene load_steps=33 format=3 uid="uid://c50acatuftkjs"]
+[gd_scene load_steps=37 format=3 uid="uid://c50acatuftkjs"]
 
 [ext_resource type="Script" path="res://Scripts/cameraManager.gd" id="1_eys4d"]
 [ext_resource type="PackedScene" uid="uid://d23yil13sbds0" path="res://Scenes/Corredor_Afonso.tscn" id="1_h1w7w"]
@@ -15,7 +15,11 @@
 [ext_resource type="AudioStream" uid="uid://dy1t07naencnu" path="res://elevador move.ogg" id="10_008cw"]
 [ext_resource type="AudioStream" uid="uid://45xy3vnfc1mu" path="res://elevador sino.ogg" id="11_kdccc"]
 [ext_resource type="Script" path="res://Scripts/bixo.gd" id="12_8n4hl"]
+[ext_resource type="AudioStream" uid="uid://cjnpb3jrbxsbl" path="res://passospavimento1.ogg" id="14_3wole"]
 [ext_resource type="AudioStream" uid="uid://b0wqfsge54oi2" path="res://fim corredor.ogg" id="15_f5a4w"]
+[ext_resource type="AudioStream" uid="uid://dsqsawwgj35l8" path="res://passospavimento2.ogg" id="15_tnktq"]
+[ext_resource type="AudioStream" uid="uid://7t3shjo8bbyq" path="res://passospavimento3.ogg" id="16_cfvyg"]
+[ext_resource type="AudioStream" uid="uid://cowvwo6mdep2l" path="res://passospavimento4.ogg" id="17_rqb5l"]
 
 [sub_resource type="Environment" id="Environment_hmgo4"]
 background_mode = 2
@@ -327,6 +331,10 @@ player_head_path = NodePath("../../Player/Head")
 
 [node name="Player" parent="." groups=["Player"] instance=ExtResource("2_em33v")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 17.7683, 1.93982, 1.8554)
+footstep_sounds = Array[AudioStream]([ExtResource("14_3wole"), ExtResource("15_tnktq"), ExtResource("16_cfvyg"), ExtResource("17_rqb5l")])
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="Player"]
+volume_db = -12.308
 
 [node name="DeBug Camera3D" type="Camera3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.7402, 0, 21.6522)
