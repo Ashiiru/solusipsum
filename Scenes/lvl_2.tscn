@@ -2,6 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://bcpxnpgi6m2j5" path="res://Blender/Rui/CORREDOR_RUI.blend" id="1_d2nc4"]
 [ext_resource type="PackedScene" uid="uid://umgfgtmtvffp" path="res://LevelLoader.tscn" id="1_ht3pa"]
+[ext_resource type="Script" path="res://Scenes/lvl_2.tres.gd" id="1_ovjyn"]
 [ext_resource type="Shader" path="res://Scripts/pixelShader.gdshader" id="2_33xtb"]
 [ext_resource type="PackedScene" uid="uid://cct3ijl60412x" path="res://Scenes/Player.tscn" id="2_e0ocd"]
 [ext_resource type="AudioStream" uid="uid://vl0ibao2qyvp" path="res://vendingmachine.ogg" id="2_ljej8"]
@@ -21,7 +22,6 @@
 [ext_resource type="AudioStream" uid="uid://7t3shjo8bbyq" path="res://passospavimento3.ogg" id="5_wdrq1"]
 [ext_resource type="AudioStream" uid="uid://cowvwo6mdep2l" path="res://passospavimento4.ogg" id="6_yyvy4"]
 [ext_resource type="Texture2D" uid="uid://oprcwjk4w4ee" path="res://Blender/Rui/ecratv.png" id="7_dij2p"]
-[ext_resource type="AudioStream" uid="uid://bl0mdcn7abpre" path="res://static.ogg" id="7_r8dln"]
 [ext_resource type="Script" path="res://Scripts/muffle.gd" id="8_3nnuo"]
 [ext_resource type="AudioStream" uid="uid://bps8ji3upc424" path="res://exit luz.ogg" id="9_m37qp"]
 [ext_resource type="AudioStream" uid="uid://bpn65gsvkbv2o" path="res://escotilha.ogg" id="10_vivl8"]
@@ -29,24 +29,12 @@
 [ext_resource type="AudioStream" uid="uid://b0wqfsge54oi2" path="res://fim corredor.ogg" id="14_0s32q"]
 [ext_resource type="AudioStream" uid="uid://cs54icwdl5xr4" path="res://porta abre.ogg" id="16_4x4g3"]
 [ext_resource type="AudioStream" uid="uid://dblc4aodhller" path="res://porta fecha.ogg" id="17_3r24b"]
+[ext_resource type="AudioStream" uid="uid://bvb7fx1rj2pvr" path="res://staticSom.ogg" id="21_p2tri"]
 [ext_resource type="AudioStream" uid="uid://b60w6knh5xeme" path="res://rua.ogg" id="23_5q51k"]
 [ext_resource type="PackedScene" uid="uid://e3g7g4gm4fl2" path="res://Scenes/ScreenTransition.tscn" id="30_0kps2"]
 
-[sub_resource type="GDScript" id="GDScript_fyd87"]
-script/source = "extends Node3D
-
-# ✅ Assign your AnimationPlayer directly in the Inspector!
-@export var transition: AnimationPlayer  
-
-func _ready():
-	
-	# 🎬 Play the FadeIn animation when the scene loads
-	if transition and transition.has_animation(\"FadeIn\"):
-		transition.play(\"FadeIn\")
-		print(\"🎬 Playing FadeIn on Scene Start!\")
-	else:
-		push_error(\"🚨 ERROR: AnimationPlayer or 'FadeIn' Animation Not Found!\")
-"
+[sub_resource type="VideoStreamTheora" id="VideoStreamTheora_4ig3b"]
+file = "res://static.ogv"
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_tlsth"]
 shader = ExtResource("2_33xtb")
@@ -298,10 +286,10 @@ points = PackedVector3Array(-0.34582, -0.980964, -1.15349, 1, 0.9965, 0.991558, 
 points = PackedVector3Array(-0.34582, -0.980964, -1.15349, 1, 0.9965, 0.991558, -0.997068, 1, 0.995354, -0.9965, -1, 0.994738, -0.991804, 0.994736, -1, 0.998005, -0.995073, -1, 0.998005, 0.994505, -1, 1, -0.997068, 0.991558, -0.991804, -0.995304, -1, 0.366229, -0.916708, -1.1967, -0.359997, -0.916708, -1.1967, 0.35091, -0.977733, -1.14998)
 
 [sub_resource type="ViewportTexture" id="ViewportTexture_pvkdf"]
-viewport_path = NodePath("SubViewportContainer/SubViewport/Spatial/CORREDOR_RUI/Ecra1/SubViewport")
+viewport_path = NodePath("SubViewport")
 
 [sub_resource type="ViewportTexture" id="ViewportTexture_c6d4h"]
-viewport_path = NodePath("SubViewportContainer/SubViewport/Spatial/CORREDOR_RUI/Ecra1/SubViewport")
+viewport_path = NodePath("SubViewport")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_wqmw5"]
 resource_local_to_scene = true
@@ -311,9 +299,6 @@ albedo_texture_msdf = true
 emission_enabled = true
 emission_energy_multiplier = 1.51
 emission_texture = SubResource("ViewportTexture_c6d4h")
-
-[sub_resource type="VideoStreamTheora" id="VideoStreamTheora_4ig3b"]
-file = "res://static.ogg"
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_5qj6b"]
 resource_name = "m boneco"
@@ -482,10 +467,10 @@ size = Vector3(7.00699, 2.28027, 4.82196)
 [sub_resource type="PlaneMesh" id="PlaneMesh_4axk1"]
 
 [sub_resource type="ViewportTexture" id="ViewportTexture_0chph"]
-viewport_path = NodePath("SubViewportContainer/SubViewport/Spatial/CORREDOR_RUI/SubViewport")
+viewport_path = NodePath("SubViewportContainer/SubViewport/Spatial/CORREDOR_RUI/SubViewportPaisagem")
 
 [sub_resource type="ViewportTexture" id="ViewportTexture_d7led"]
-viewport_path = NodePath("SubViewportContainer/SubViewport/Spatial/CORREDOR_RUI/SubViewport")
+viewport_path = NodePath("SubViewportContainer/SubViewport/Spatial/CORREDOR_RUI/SubViewportPaisagem")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_qwcod"]
 resource_local_to_scene = true
@@ -495,7 +480,7 @@ emission_energy_multiplier = 2.35
 emission_texture = SubResource("ViewportTexture_d7led")
 
 [sub_resource type="VideoStreamTheora" id="VideoStreamTheora_a7kk8"]
-file = "res://paisagem.ogg"
+file = "res://paisagem.ogv"
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_rxcp6"]
 
@@ -503,8 +488,23 @@ file = "res://paisagem.ogg"
 albedo_color = Color(0.188235, 0.0823529, 0.396078, 1)
 
 [node name="Lvl_2" type="Node3D" node_paths=PackedStringArray("transition")]
-script = SubResource("GDScript_fyd87")
+script = ExtResource("1_ovjyn")
 transition = NodePath("CanvasLayer/AnimationPlayerFade")
+
+[node name="SubViewport" type="SubViewport" parent="."]
+size = Vector2i(480, 360)
+render_target_update_mode = 4
+
+[node name="SubViewportContainer" type="SubViewportContainer" parent="SubViewport"]
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="SubViewport/SubViewportContainer"]
+layout_mode = 2
+stream = SubResource("VideoStreamTheora_4ig3b")
+volume_db = -80.0
+autoplay = true
+loop = true
 
 [node name="LevelLoader" parent="." node_paths=PackedStringArray("animation_player") instance=ExtResource("1_ht3pa")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 23.9274, -7.8847, -15.8263)
@@ -810,23 +810,9 @@ player_head_path = NodePath("../../CharacterBody3D/Head")
 [node name="Ecra1" parent="SubViewportContainer/SubViewport/Spatial/CORREDOR_RUI" index="30"]
 surface_material_override/0 = SubResource("StandardMaterial3D_wqmw5")
 
-[node name="SubViewport" type="SubViewport" parent="SubViewportContainer/SubViewport/Spatial/CORREDOR_RUI/Ecra1" index="0"]
-size = Vector2i(480, 360)
-
-[node name="SubViewportContainer" type="SubViewportContainer" parent="SubViewportContainer/SubViewport/Spatial/CORREDOR_RUI/Ecra1/SubViewport"]
-offset_right = 40.0
-offset_bottom = 40.0
-
-[node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="SubViewportContainer/SubViewport/Spatial/CORREDOR_RUI/Ecra1/SubViewport/SubViewportContainer"]
-layout_mode = 2
-stream = SubResource("VideoStreamTheora_4ig3b")
-volume_db = -80.0
-autoplay = true
-loop = true
-
-[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="SubViewportContainer/SubViewport/Spatial/CORREDOR_RUI/Ecra1" index="1"]
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="SubViewportContainer/SubViewport/Spatial/CORREDOR_RUI/Ecra1" index="0"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.9407e-08, 0, 2.04505)
-stream = ExtResource("7_r8dln")
+stream = ExtResource("21_p2tri")
 volume_db = -18.656
 max_db = -6.263
 autoplay = true
@@ -835,7 +821,7 @@ emission_angle_enabled = true
 emission_angle_degrees = 90.0
 emission_angle_filter_attenuation_db = -7.3
 
-[node name="OmniLight3D" type="OmniLight3D" parent="SubViewportContainer/SubViewport/Spatial/CORREDOR_RUI/Ecra1" index="2"]
+[node name="OmniLight3D" type="OmniLight3D" parent="SubViewportContainer/SubViewport/Spatial/CORREDOR_RUI/Ecra1" index="1"]
 transform = Transform3D(2.13508, 0, 5.96046e-08, 0, 2.67967, 0, 0, 0, 2.41162, -0.013485, 0.0356772, -1.45407)
 light_color = Color(0.589096, 0.589096, 0.589096, 1)
 light_energy = 1.359
@@ -872,6 +858,8 @@ surface_material_override/0 = SubResource("StandardMaterial3D_wqmw5")
 
 [node name="SubViewport" type="SubViewport" parent="SubViewportContainer/SubViewport/Spatial/CORREDOR_RUI/Ecra5"]
 size = Vector2i(480, 360)
+render_target_clear_mode = 2
+render_target_update_mode = 4
 
 [node name="SubViewportContainer" type="SubViewportContainer" parent="SubViewportContainer/SubViewport/Spatial/CORREDOR_RUI/Ecra5/SubViewport"]
 offset_right = 40.0
@@ -1072,14 +1060,14 @@ spot_range = 102.893
 spot_attenuation = -0.57
 spot_angle = 23.78
 
-[node name="SubViewport" type="SubViewport" parent="SubViewportContainer/SubViewport/Spatial/CORREDOR_RUI"]
+[node name="SubViewportPaisagem" type="SubViewport" parent="SubViewportContainer/SubViewport/Spatial/CORREDOR_RUI"]
 size = Vector2i(1280, 720)
 
-[node name="SubViewportContainer" type="SubViewportContainer" parent="SubViewportContainer/SubViewport/Spatial/CORREDOR_RUI/SubViewport"]
+[node name="SubViewportContainer" type="SubViewportContainer" parent="SubViewportContainer/SubViewport/Spatial/CORREDOR_RUI/SubViewportPaisagem"]
 offset_right = 40.0
 offset_bottom = 40.0
 
-[node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="SubViewportContainer/SubViewport/Spatial/CORREDOR_RUI/SubViewport/SubViewportContainer"]
+[node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="SubViewportContainer/SubViewport/Spatial/CORREDOR_RUI/SubViewportPaisagem/SubViewportContainer"]
 layout_mode = 2
 stream = SubResource("VideoStreamTheora_a7kk8")
 autoplay = true
