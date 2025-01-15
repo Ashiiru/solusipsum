@@ -759,7 +759,7 @@ max_distance = 6.0
 transform = Transform3D(0.00510518, 0.648967, 0.00185148, 0.00407676, -0.00659972, 0.187893, 0.257297, -0.012772, -0.00301382, 96.3157, -10.7252, -69.0784)
 
 [node name="ESCOTILA ESQ" parent="SubViewportContainer/SubViewport/Spatial/CORREDOR_RUI/roda esq" index="0"]
-transform = Transform3D(0.0272435, 1.28662, 37.0666, 28.7115, -3.79184, 0.0145761, 1.80646, 60.2473, -0.790664, -0.55368, 0.257095, -0.381313)
+transform = Transform3D(0.0272435, 1.28662, 37.0666, 28.7115, -3.79184, 0.0145761, 1.80646, 60.2473, -0.790665, -0.55368, 0.257095, -0.381313)
 rotation_edit_mode = 1
 
 [node name="StaticBody3D" type="StaticBody3D" parent="SubViewportContainer/SubViewport/Spatial/CORREDOR_RUI/roda esq/ESCOTILA ESQ" index="0"]

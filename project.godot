@@ -13,7 +13,7 @@ config_version=5
 config/name="Solus Ipsum"
 run/main_scene="res://Scenes/Lvl_1.tscn"
 config/features=PackedStringArray("4.3", "Forward Plus")
-config/icon="res://icon.svg"
+config/icon="res://Scenes/solusipsumlogoalt.png"
 
 [display]
 

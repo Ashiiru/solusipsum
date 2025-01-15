@@ -33,12 +33,6 @@ func _physics_process(delta):
 			target_position.y = global_transform.origin.y
 			look_at(target_position, Vector3.UP)
 
-		# ✅ Stop when close enough
-		if global_transform.origin.distance_to(player.global_transform.origin) <= 1.5:
-			velocity = Vector3.ZERO
-		else:
-			velocity = direction * SPEED
-			
 			# Play sound every time the statue resumes movement
 		if velocity != Vector3.ZERO and !was_moving:
 			if movement_sound:
