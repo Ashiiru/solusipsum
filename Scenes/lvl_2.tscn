@@ -1,6 +1,7 @@
-[gd_scene load_steps=94 format=4 uid="uid://cgahhes3omp5v"]
+[gd_scene load_steps=96 format=4 uid="uid://cgahhes3omp5v"]
 
 [ext_resource type="PackedScene" uid="uid://bcpxnpgi6m2j5" path="res://Blender/Rui/CORREDOR_RUI.blend" id="1_d2nc4"]
+[ext_resource type="PackedScene" uid="uid://umgfgtmtvffp" path="res://LevelLoader.tscn" id="1_ht3pa"]
 [ext_resource type="Shader" path="res://Scripts/pixelShader.gdshader" id="2_33xtb"]
 [ext_resource type="PackedScene" uid="uid://cct3ijl60412x" path="res://Scenes/Player.tscn" id="2_e0ocd"]
 [ext_resource type="AudioStream" uid="uid://vl0ibao2qyvp" path="res://vendingmachine.ogg" id="2_ljej8"]
@@ -29,9 +30,22 @@
 [ext_resource type="AudioStream" uid="uid://cs54icwdl5xr4" path="res://porta abre.ogg" id="16_4x4g3"]
 [ext_resource type="AudioStream" uid="uid://dblc4aodhller" path="res://porta fecha.ogg" id="17_3r24b"]
 [ext_resource type="AudioStream" uid="uid://b60w6knh5xeme" path="res://rua.ogg" id="23_5q51k"]
+[ext_resource type="PackedScene" uid="uid://e3g7g4gm4fl2" path="res://Scenes/ScreenTransition.tscn" id="30_0kps2"]
 
 [sub_resource type="GDScript" id="GDScript_fyd87"]
 script/source = "extends Node3D
+
+# ✅ Assign your AnimationPlayer directly in the Inspector!
+@export var transition: AnimationPlayer  
+
+func _ready():
+	
+	# 🎬 Play the FadeIn animation when the scene loads
+	if transition and transition.has_animation(\"FadeIn\"):
+		transition.play(\"FadeIn\")
+		print(\"🎬 Playing FadeIn on Scene Start!\")
+	else:
+		push_error(\"🚨 ERROR: AnimationPlayer or 'FadeIn' Animation Not Found!\")
 "
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_tlsth"]
@@ -488,8 +502,18 @@ file = "res://paisagem.ogg"
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_67xcu"]
 albedo_color = Color(0.188235, 0.0823529, 0.396078, 1)
 
-[node name="Lvl_2" type="Node3D"]
+[node name="Lvl_2" type="Node3D" node_paths=PackedStringArray("transition")]
 script = SubResource("GDScript_fyd87")
+transition = NodePath("CanvasLayer/AnimationPlayerFade")
+
+[node name="LevelLoader" parent="." node_paths=PackedStringArray("animation_player") instance=ExtResource("1_ht3pa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 23.9274, -7.8847, -15.8263)
+next_level_path = "res://Scenes/lvl_3.tscn"
+trigger_by_ball = false
+animation_player = NodePath("CollisionShape3D/CanvasLayer/AnimationPlayerFade")
+
+[node name="CollisionShape3D" parent="LevelLoader" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.698112, 3.8734, 0.610102)
 
 [node name="SubViewportContainer" type="SubViewportContainer" parent="."]
 material = SubResource("ShaderMaterial_tlsth")
@@ -499,7 +523,7 @@ offset_bottom = 649.0
 [node name="SubViewport" type="SubViewport" parent="SubViewportContainer"]
 handle_input_locally = false
 audio_listener_enable_3d = true
-size = Vector2i(1152, 648)
+size = Vector2i(1920, 1080)
 render_target_update_mode = 4
 
 [node name="Spatial" type="Node3D" parent="SubViewportContainer/SubViewport"]
@@ -735,7 +759,7 @@ max_distance = 6.0
 transform = Transform3D(0.00510518, 0.648967, 0.00185148, 0.00407676, -0.00659972, 0.187893, 0.257297, -0.012772, -0.00301382, 96.3157, -10.7252, -69.0784)
 
 [node name="ESCOTILA ESQ" parent="SubViewportContainer/SubViewport/Spatial/CORREDOR_RUI/roda esq" index="0"]
-transform = Transform3D(0.0272435, 1.28662, 37.0666, 28.7115, -3.79184, 0.0145761, 1.80646, 60.2473, -0.790665, -0.55368, 0.257095, -0.381313)
+transform = Transform3D(0.0272435, 1.28662, 37.0666, 28.7115, -3.79184, 0.0145761, 1.80646, 60.2473, -0.790664, -0.55368, 0.257095, -0.381313)
 rotation_edit_mode = 1
 
 [node name="StaticBody3D" type="StaticBody3D" parent="SubViewportContainer/SubViewport/Spatial/CORREDOR_RUI/roda esq/ESCOTILA ESQ" index="0"]
@@ -801,13 +825,14 @@ autoplay = true
 loop = true
 
 [node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="SubViewportContainer/SubViewport/Spatial/CORREDOR_RUI/Ecra1" index="1"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.9407e-08, 0, -1.76618)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.9407e-08, 0, 2.04505)
 stream = ExtResource("7_r8dln")
 volume_db = -18.656
+max_db = -6.263
 autoplay = true
 max_distance = 11.0
 emission_angle_enabled = true
-emission_angle_degrees = 88.5
+emission_angle_degrees = 90.0
 emission_angle_filter_attenuation_db = -7.3
 
 [node name="OmniLight3D" type="OmniLight3D" parent="SubViewportContainer/SubViewport/Spatial/CORREDOR_RUI/Ecra1" index="2"]
@@ -1075,11 +1100,16 @@ max_distance = 6.0
 emission_angle_enabled = true
 emission_angle_degrees = 30.5
 
+[node name="CanvasLayer" parent="." instance=ExtResource("30_0kps2")]
+
 [connection signal="body_entered" from="SubViewportContainer/SubViewport/Spatial/CORREDOR_RUI/Triggers/abrir porta 1" to="SubViewportContainer/SubViewport/Spatial/CORREDOR_RUI/Triggers/abrir porta 1" method="_on_body_entered"]
 [connection signal="body_exited" from="SubViewportContainer/SubViewport/Spatial/CORREDOR_RUI/Triggers/abrir porta 1" to="SubViewportContainer/SubViewport/Spatial/CORREDOR_RUI/Triggers/abrir porta 1" method="_on_body_exited"]
 [connection signal="body_entered" from="SubViewportContainer/SubViewport/Spatial/CORREDOR_RUI/Triggers/abrir porta 2" to="SubViewportContainer/SubViewport/Spatial/CORREDOR_RUI/Triggers/abrir porta 2" method="_on_body_entered"]
 [connection signal="body_exited" from="SubViewportContainer/SubViewport/Spatial/CORREDOR_RUI/Triggers/abrir porta 2" to="SubViewportContainer/SubViewport/Spatial/CORREDOR_RUI/Triggers/abrir porta 2" method="_on_body_exited"]
 [connection signal="body_entered" from="SubViewportContainer/SubViewport/Spatial/CORREDOR_RUI/Triggers/portao fecha" to="SubViewportContainer/SubViewport/Spatial/CORREDOR_RUI/Triggers/portao fecha" method="_on_body_entered"]
 
+[editable path="LevelLoader"]
+[editable path="LevelLoader/CollisionShape3D/CanvasLayer"]
 [editable path="SubViewportContainer/SubViewport/Spatial/CharacterBody3D"]
 [editable path="SubViewportContainer/SubViewport/Spatial/CORREDOR_RUI"]
+[editable path="CanvasLayer"]

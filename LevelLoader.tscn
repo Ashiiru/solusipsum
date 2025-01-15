@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://umgfgtmtvffp"]
+
+[ext_resource type="Script" path="res://Scripts/levelloader.gd" id="1_havhs"]
+[ext_resource type="PackedScene" uid="uid://e3g7g4gm4fl2" path="res://Scenes/ScreenTransition.tscn" id="2_obfxi"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ewcha"]
+size = Vector3(4.90984, 0.167, 3.61989)
+
+[node name="LevelLoader" type="Area3D"]
+collision_mask = 3
+script = ExtResource("1_havhs")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00932777, 0.065957, 0.00944316)
+shape = SubResource("BoxShape3D_ewcha")
+
+[node name="CanvasLayer" parent="CollisionShape3D" instance=ExtResource("2_obfxi")]
+
+[editable path="CollisionShape3D/CanvasLayer"]

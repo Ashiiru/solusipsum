@@ -1,8 +1,10 @@
-[gd_scene load_steps=29 format=3 uid="uid://wywm6xdl3ax8"]
+[gd_scene load_steps=35 format=3 uid="uid://wywm6xdl3ax8"]
 
 [ext_resource type="PackedScene" uid="uid://cct3ijl60412x" path="res://Scenes/Player.tscn" id="1_5et72"]
+[ext_resource type="Script" path="res://Scenes/lvl_3.gd" id="1_xaa7h"]
 [ext_resource type="PackedScene" uid="uid://bnythxymj8ikl" path="res://Blender/André/corredor/CORREDOR__ANDRE.blend" id="2_2kyho"]
 [ext_resource type="AudioStream" uid="uid://cx0cfuocvj5wv" path="res://passomadeira1.ogg" id="2_exdm4"]
+[ext_resource type="PackedScene" uid="uid://e3g7g4gm4fl2" path="res://Scenes/ScreenTransition.tscn" id="2_fn047"]
 [ext_resource type="PackedScene" uid="uid://du5wyhgwo32g3" path="res://Scenes/Statue.tscn" id="3_hqy7q"]
 [ext_resource type="AudioStream" uid="uid://b4nhcvsnubpgt" path="res://passomadeira2.ogg" id="3_v0y1u"]
 [ext_resource type="AudioStream" uid="uid://dwpgcsaicyauc" path="res://estatuamexer.ogg" id="4_418n0"]
@@ -10,10 +12,12 @@
 [ext_resource type="AudioStream" uid="uid://dclxwnnb3rge4" path="res://passomadeira3.ogg" id="4_npuek"]
 [ext_resource type="AudioStream" uid="uid://d2e2y0wdfw7xe" path="res://passomadeira4.ogg" id="5_bf123"]
 [ext_resource type="PackedScene" uid="uid://37xg0r2btkyp" path="res://Scenes/grupovelas.tscn" id="5_gaadx"]
-[ext_resource type="Script" path="res://Scenes/porta_2_001.gd" id="5_l0e4a"]
 [ext_resource type="Texture2D" uid="uid://2enhss48kinn" path="res://Blender/André/texturas/photo-1691989949393-7cc2a4a1c518.jpg" id="6_677d5"]
 [ext_resource type="AudioStream" uid="uid://b3x780m5qov21" path="res://portatrancada.ogg" id="6_vv6hr"]
 [ext_resource type="PackedScene" uid="uid://tsdvj7i73rss" path="res://Scenes/lvl_3_somluzbckrg.tscn" id="7_hpxx0"]
+[ext_resource type="AudioStream" uid="uid://b0wqfsge54oi2" path="res://fim corredor.ogg" id="9_1abob"]
+[ext_resource type="Script" path="res://Scenes/trigger_sound_porta_trancada.gd" id="9_818h0"]
+[ext_resource type="PackedScene" uid="uid://umgfgtmtvffp" path="res://LevelLoader.tscn" id="13_y8eh6"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_ptuln"]
 sky_top_color = Color(0, 0, 0, 1)
@@ -42,8 +46,13 @@ data = PackedVector3Array(1.2734, -0.1696, -0.9756, 1.2734, -0.1156, -0.965, 1.2
 [sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_ia0o0"]
 points = PackedVector3Array(2.26536, 0.6591, 0.278332, -0.0647597, -3.35066, -5.50238, 2.06357, -3.31502, -5.45266, 2.26536, 0.6591, -5.67823, -0.38176, 0.434815, 0.373523, 2.06357, -3.31502, 0.0527592, -0.334, 0.649696, -5.66424, -0.189611, -3.40692, -0.202904, 2.307, 0.434815, -5.77342, -0.38176, 0.434815, -5.77342, -0.334, 0.649696, 0.264336, 2.307, 0.434815, 0.373523, -0.116634, -3.27613, -0.00148671)
 
+[sub_resource type="GDScript" id="GDScript_hmlif"]
+
 [sub_resource type="BoxShape3D" id="BoxShape3D_26df4"]
 size = Vector3(8.38815, 12.5922, 1.14636)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_s7ibj"]
+size = Vector3(14.3073, 1.85767, 8.65799)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_8dmvf"]
 size = Vector3(10.8052, 1, 26.0964)
@@ -72,7 +81,12 @@ emission_energy_multiplier = 0.03
 [sub_resource type="QuadMesh" id="QuadMesh_dvijx"]
 material = SubResource("StandardMaterial3D_all1o")
 
-[node name="Node3D" type="Node3D"]
+[node name="Node3D" type="Node3D" node_paths=PackedStringArray("transition")]
+script = ExtResource("1_xaa7h")
+transition = NodePath("CanvasLayer/AnimationPlayerFade")
+
+[node name="CanvasLayer" parent="." instance=ExtResource("2_fn047")]
+unique_name_in_owner = true
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_ngw0i")
@@ -107,7 +121,7 @@ spot_range = 2.97159
 spot_angle = 81.8109
 
 [node name="porta2_001" parent="CORREDOR__ANDRE" index="8"]
-script = ExtResource("5_l0e4a")
+script = SubResource("GDScript_hmlif")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="CORREDOR__ANDRE/porta2_001" index="0"]
 
@@ -168,12 +182,31 @@ light_energy = 1.359
 light_size = 0.021
 omni_range = 7.0
 
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="CORREDOR__ANDRE"]
+transform = Transform3D(5.88235, 0, 0, 0, 5.88235, 0, 0, 0, 5.88235, -141.471, 0.0471897, 42.5033)
+stream = ExtResource("9_1abob")
+autoplay = true
+max_distance = 8.0
+
 [node name="luz corridor2" type="OmniLight3D" parent="CORREDOR__ANDRE"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 38.8105, 12.5628, 0.0178408)
 light_color = Color(1, 0.643137, 0.101961, 1)
 light_energy = 1.359
 light_size = 0.021
 omni_range = 7.0
+
+[node name="TriggerSoundPortaTrancada" type="Area3D" parent="CORREDOR__ANDRE"]
+transform = Transform3D(1.17518, 0, 0.0551526, 0, 1.17647, 0, -0.0551526, 0, 1.17518, -11.6342, -9.89489, 16.6293)
+script = ExtResource("9_818h0")
+locked_sound_path = NodePath("CollisionShape3D/PortaTrancada")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CORREDOR__ANDRE/TriggerSoundPortaTrancada"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 44.4153, -3.04138, -15.2325)
+shape = SubResource("BoxShape3D_s7ibj")
+
+[node name="PortaTrancada" type="AudioStreamPlayer3D" parent="CORREDOR__ANDRE/TriggerSoundPortaTrancada/CollisionShape3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.432109, -6.29861)
+stream = ExtResource("6_vv6hr")
 
 [node name="TriggerEstatua" type="Area3D" parent="CORREDOR__ANDRE"]
 transform = Transform3D(1.17518, 0, 0.0551526, 0, 1.17647, 0, -0.0551526, 0, 1.17518, -11.6342, -9.89489, 16.6293)
@@ -190,6 +223,16 @@ detection_area = NodePath("../CORREDOR__ANDRE/TriggerEstatua")
 [node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="Statue"]
 stream = ExtResource("4_418n0")
 volume_db = -14.359
+
+[node name="LevelLoader" parent="Statue" node_paths=PackedStringArray("animation_player") instance=ExtResource("13_y8eh6")]
+transform = Transform3D(1, 0, -3.72529e-09, 0, 1, 0, 3.72529e-09, 0, 1, -0.617569, 0, -3.12723)
+next_level_path = "res://Scenes/lvl_4.tscn"
+trigger_by_ball = false
+trigger_by_statue = false
+animation_player = NodePath("CollisionShape3D/CanvasLayer/AnimationPlayerFade")
+
+[node name="CollisionShape3D" parent="Statue/LevelLoader" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.653631, 0.0659571, 2.67804)
 
 [node name="Estatua" type="MeshInstance3D" parent="."]
 transform = Transform3D(-8.74228e-09, 0, -0.2, 0, 0.2, 0, 0.2, 0, -8.74228e-09, -2.40464, -2.32482, 1.87005)
@@ -333,8 +376,11 @@ spot_attenuation = 0.82
 spot_angle = 9.05
 spot_angle_attenuation = 0.965945
 
+[editable path="CanvasLayer"]
 [editable path="CharacterBody3D"]
 [editable path="CORREDOR__ANDRE"]
+[editable path="Statue/LevelLoader"]
+[editable path="Statue/LevelLoader/CollisionShape3D/CanvasLayer"]
 [editable path="grupovelas"]
 [editable path="grupovelas2"]
 [editable path="grupovelas2/vela particulada"]
